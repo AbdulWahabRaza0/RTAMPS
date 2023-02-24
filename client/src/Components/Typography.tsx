@@ -8,6 +8,7 @@ interface PProps {
   lHeight?: string;
   weight?: string;
   tt?: string;
+  td?: string;
 }
 const P = styled.p<PProps>`
   font-style: normal;
@@ -16,5 +17,6 @@ const P = styled.p<PProps>`
   line-height: ${(props) => (props.lHeight ? props.lHeight : "24px")};
   font-size: ${(props) => (props.size ? props.size : "16px")};
   color: ${(props) => (props.color ? props.color : "")};
+  text-decoration: ${(props) => (props.td ? props.td : "")};
 `;
 export { H1, H2, H3, P };
