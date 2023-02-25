@@ -1,59 +1,64 @@
 import React from "react";
-import { Wrapper, SpanWrapper } from "../Components/Layout";
+import { Wrapper, SpanWrapper, Row, Col } from "../Components/Layout";
 import { CardComp } from "../Components/Layout";
 import { Spacer } from "../Components/Spacer";
 import { P } from "../Components/Typography";
+import { Image } from "../Components/Image";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import {
   PublishIcon,
   DownloadIcon,
   LocalLibraryIcon,
   BuildIcon,
+  BarChartIcon,
+  BiotechIcon,
 } from "../Components/Icons";
 const CardsData = [
   {
-    name: "Submit",
-    desc: "Deposit Data on manuscripts into NCBI database",
-    src: "/assets/submit.svg",
-    icon: PublishIcon,
+    name: "Bacteria",
+    src: "/assets/bacteria.png",
   },
   {
-    name: "Download",
-    desc: "Transfer NCBI data to your computer",
-    src: "/assets/download.svg",
-    icon: DownloadIcon,
+    name: "Virus",
+    src: "/assets/virus.png",
   },
   {
-    name: "Learn",
-    desc: "Find help documents, attend a class or watch a tutorial",
-    src: "/assets/learn.svg",
-    icon: LocalLibraryIcon,
+    name: "Archea",
+    src: "/assets/archea.png",
   },
   {
-    name: "Develop",
-    desc: "Use NCBI APIs and code libraries to build projects",
-    src: "/assets/develop.svg",
-    icon: BuildIcon,
+    name: "Fungi",
+    src: "/assets/fungi.png",
   },
   {
-    name: "Analyze",
-    desc: "Identify an NCBI tool for your data analyze task",
-    src: "/assets/analyze.svg",
+    name: "Animal",
+    src: "/assets/animal.png",
   },
   {
-    name: "Research",
-    desc: "Explore NCBI research and collaborative projects",
-    src: "/assets/research.svg",
+    name: "Plants",
+    src: "/assets/plants.png",
+  },
+  {
+    name: "Protist",
+    src: "/assets/protist.png",
+  },
+  {
+    name: "Protozoa",
+    src: "/assets/protozoa.png",
   },
 ];
 const LinksData = ["About the NCBI", "Mission", "Organization", " NCBI News"];
-const LinkStyle = styled(P)`
+const CardStyle = styled(Wrapper)`
   cursor: pointer;
+  color: #012761;
   &:hover {
-    color: green;
+    background: #f4ea56;
   }
 `;
 const Home = () => {
+  const router = useNavigate();
+
   return (
     <>
       <Wrapper>
@@ -66,29 +71,47 @@ const Home = () => {
             WEB3 INTELLIGENCE
           </P>
         </Wrapper>
-        {/* <Wrapper ms="3%">
-          <P className="mb-1" weight="700" size="18px" color="#012761">
-            Welcome to NCBI
-          </P>
-          <P size="14px" className="mb-2">
-            The National Center for Biotechnology Information advances science
-            and health by providing access to biomedical and genomic
-            information.
-          </P>
-        </Wrapper> */}
+
         <Spacer height="40px" />
-        <Wrapper ms="10%" me="10%">
-          <Wrapper className="d-flex flex-row flex-wrap align-items-center">
+        <Wrapper ms="10%" me="10%" family="Signika">
+          <Row className="align-items-center justify-content-center">
             {CardsData.map((val, index) => {
               return (
                 <>
-                  <SpanWrapper key={index} mt="5px" mb="5px" ms="5px" me="5px">
-                    <CardComp name={val.name} desc={val.desc} src={val.src} />
-                  </SpanWrapper>
+                  <Col
+                    md={3}
+                    sm={3}
+                    lg={3}
+                    className="d-flex flex-row justify-content-center"
+                    style={{ marginTop: "43px", marginBottom: "43px" }}
+                  >
+                    <CardStyle
+                      width="70%"
+                      height="145px"
+                      border="1px solid gray"
+                      borderRadius="10px"
+                      className="text-center pt-3"
+                      onClick={() => {
+                        router(`/${val.name.toLowerCase()}`, {
+                          state: index + 1,
+                        });
+                      }}
+                    >
+                      <P size="27px" weight="700" className="mb-3">
+                        {val.name}
+                      </P>
+                      <Image
+                        src={val.src}
+                        alt="Submit"
+                        width={75}
+                        height={75}
+                      />
+                    </CardStyle>
+                  </Col>
                 </>
               );
             })}
-          </Wrapper>
+          </Row>
         </Wrapper>
       </Wrapper>
     </>

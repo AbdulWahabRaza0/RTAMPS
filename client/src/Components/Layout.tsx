@@ -41,15 +41,13 @@ const SpanWrapper = styled.span<WrapperProps>`
 `;
 interface CardCompProps {
   name: string;
-  desc: string;
   src: string;
 }
 const CardComp = (props: CardCompProps) => {
   return (
     <Wrapper
-      width="250px"
-      height="200px"
-      // bg="gray"
+      width="200px"
+      height="100px"
       color="#012761"
       border="1px solid black"
       borderRadius="10px"
@@ -57,7 +55,7 @@ const CardComp = (props: CardCompProps) => {
       style={{ cursor: "pointer" }}
     >
       <P weight="700">{props.name}</P>
-      <Image style={{ color: "green" }} src={props.src} alt="Submit" />
+      <Image src={props.src} alt="Submit" width={75} height={55} />
     </Wrapper>
   );
 };
