@@ -14,6 +14,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import Dropdown from "react-bootstrap/Dropdown";
 const Bacteria = () => {
   const location = useLocation();
+
   const { state } = location;
   const [mount, setMount] = useState(false);
   let [page, setPage] = useState(1);
@@ -21,17 +22,15 @@ const Bacteria = () => {
   const PER_PAGE = 10;
   const count = Math.ceil(data.length / PER_PAGE);
   const _DATA = usePagination(data, PER_PAGE);
-
   useEffect(() => {
     setMount(true);
   }, [location]);
   const handleChange = (e: any, p: any) => {
     setPage(p);
-    console.log("This is page ", p);
-    _DATA.jump(p);
+    _DATA?.jump(p);
   };
 
-  return mount ? (
+  return mount && data && count && _DATA ? (
     <>
       <Wrapper className="d-flex flex-row justify-content-center align-items-center mt-5">
         <Wrapper
