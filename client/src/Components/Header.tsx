@@ -12,6 +12,7 @@ import {
   BarChartIcon,
 } from "./Icons";
 import { useMediaQuery } from "react-responsive";
+import Drawer from "./Drawer";
 import styled from "styled-components";
 const CardWrapper = styled(SpanWrapper)``;
 const headerLinks = [
@@ -42,42 +43,55 @@ const Header = () => {
   }, []);
   return mount ? (
     <>
-      <Wrapper
-        color="#012761"
-        className="d-flex flex-row justify-content-start align-items-center p-2"
-        family="Signika"
-      >
-        {headerLinks.map((val, index) => {
-          return (
-            <>
-              <CardWrapper
-                mb="0px"
-                mt="5px"
-                ms="15px"
-                me="15px"
-                key={index}
-                onClick={() => {
-                  showLink(index);
-                  router(`/${index === 0 ? "" : val.name.toLowerCase()}`, {
-                    state: index + 1,
-                  });
-                }}
-              >
-                <P
-                  weight="900"
-                  className="mb-0 d-flex flex-row align-items-center"
-                  style={{ height: "20px", cursor: "pointer" }}
-                  color="#012761"
-                  td={index === link ? "underline" : ""}
+      {isResponsive ? (
+        <>
+          <Wrapper
+            color="#012761"
+            className="d-flex flex-row justify-content-end align-items-center p-2"
+            family="Signika"
+          >
+            <Drawer />
+          </Wrapper>
+        </>
+      ) : (
+        <Wrapper
+          color="#012761"
+          className="d-flex flex-row justify-content-start align-items-center p-2"
+          family="Signika"
+        >
+          {headerLinks.map((val, index) => {
+            return (
+              <>
+                <CardWrapper
+                  mb="0px"
+                  mt="5px"
+                  ms="15px"
+                  me="15px"
+                  key={index}
+                  onClick={() => {
+                    showLink(index);
+                    router(`/${index === 0 ? "" : val.name.toLowerCase()}`, {
+                      state: index + 1,
+                    });
+                  }}
                 >
-                  <val.icon />
-                  {val.name}
-                </P>
-              </CardWrapper>
-            </>
-          );
-        })}
-      </Wrapper>
+                  <P
+                    weight="900"
+                    className="mb-0 d-flex flex-row align-items-center"
+                    style={{ height: "20px", cursor: "pointer" }}
+                    color="#012761"
+                    td={index === link ? "underline" : ""}
+                  >
+                    <val.icon />
+                    {val.name}
+                  </P>
+                </CardWrapper>
+              </>
+            );
+          })}
+        </Wrapper>
+      )}
+
       <Wrapper
         className="d-flex flex-row justify-content-center ps-4"
         bg="#012761"

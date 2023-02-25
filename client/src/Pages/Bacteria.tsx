@@ -12,9 +12,18 @@ import { default as data } from "../utils/MOCK_DATA.json";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import SearchIcon from "@mui/icons-material/Search";
 import Dropdown from "react-bootstrap/Dropdown";
+import { useMediaQuery } from "react-responsive";
+import styled from "styled-components";
+const LinkP = styled(P)`
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+  }
+`;
 const Bacteria = () => {
+  const isResponsive = useMediaQuery({ query: "(max-width: 487px)" });
   const location = useLocation();
-
   const { state } = location;
   const [mount, setMount] = useState(false);
   let [page, setPage] = useState(1);
@@ -34,21 +43,27 @@ const Bacteria = () => {
     <>
       <Wrapper className="d-flex flex-row justify-content-center align-items-center mt-5">
         <Wrapper
-          className="d-flex flex-row position-relative"
+          className="d-flex flex-row position-relative "
           style={{
             border: "1px solid black",
             borderRadius: "10px",
             height: "40px",
+            width: isResponsive ? "350px" : "530px",
           }}
         >
-          <Dropdown style={{}}>
-            <Dropdown.Toggle variant="standard">Open Menu</Dropdown.Toggle>
-            <Dropdown.Menu style={{ width: "100px" }}>
-              <Dropdown.Item style={{ width: "100px" }} href="#">
-                Home Page
-              </Dropdown.Item>
-              <Dropdown.Item href="#">Settings</Dropdown.Item>
-              <Dropdown.Item href="#">Logout</Dropdown.Item>
+          <Dropdown style={{}} className="d-inline-block">
+            <Dropdown.Toggle variant="standard">
+              Select Options&nbsp;&nbsp;&nbsp;&nbsp;
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item href="#">Bacteria</Dropdown.Item>
+              <Dropdown.Item href="#">Virus</Dropdown.Item>
+              <Dropdown.Item href="#">Archea</Dropdown.Item>
+              <Dropdown.Item href="#">Fungi</Dropdown.Item>
+              <Dropdown.Item href="#">Animal</Dropdown.Item>
+              <Dropdown.Item href="#">Plants</Dropdown.Item>
+              <Dropdown.Item href="#">Protist</Dropdown.Item>
+              <Dropdown.Item href="#">Protozoa</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
 
@@ -78,7 +93,7 @@ const Bacteria = () => {
             onChange={handleChange}
           />
         </Stack>
-        <Wrapper>
+        <Wrapper className="ms-4">
           <P weight="500" color="#012761">
             Page {page} to {PER_PAGE} of {count}
           </P>
@@ -101,20 +116,31 @@ const Bacteria = () => {
                       {index + page * PER_PAGE - 9}.
                     </P>
                     <Wrapper className="d-flex flex-column">
-                      <P
+                      <LinkP
                         weight="700"
                         size="20px"
                         className="mb-1"
                         color="#012761"
                       >
                         antimicrobial peptides [Oryza sativa Japonica Group]
-                      </P>
+                      </LinkP>
                       <P weight="500" className="mb-0">
                         392 aa protein
                       </P>
                       <P size="12px" className="mb-1">
                         Accession: XP_015615526.1 GI: 1002304331
                       </P>
+                      <Wrapper className="d-flex flex-row">
+                        <LinkP className="mb-0" td="underline" size="12px">
+                          BioProject
+                        </LinkP>
+                        <LinkP className="ms-3 mb-0" td="underline" size="12px">
+                          Nucleotide
+                        </LinkP>
+                        <LinkP className="ms-3 mb-0" td="underline" size="12px">
+                          Taxonomy
+                        </LinkP>
+                      </Wrapper>
                     </Wrapper>
                   </Wrapper>
                 </div>
