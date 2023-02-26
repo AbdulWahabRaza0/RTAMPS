@@ -14,11 +14,12 @@ const Footer = () => {
         height="120px"
         family="Signika"
       >
-        <P className="mb-0" color="white" weight="400">
-          All Rights Reserved &copy;2023
+        <P size="18px" className="mb-1" color="#FFC23B" weight="400">
+          Copyright &copy;2023
         </P>
-        <P className="mb-0" color="white" weight="500">
-          Affiliated Authornate
+        <P className="mb-0" color="#FFC23B" weight="500">
+          in the meeting tomorrow to the client to sign the contract and return
+          the original document. Islamabad
         </P>
       </Wrapper>
     </>

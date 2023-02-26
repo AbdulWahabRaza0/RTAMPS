@@ -6,4 +6,9 @@ const Input = styled.input`
   border: none;
   border-radius: 10px;
 `;
-export { Input };
+const SearchInput = styled.input`
+  width: 500px;
+  height: 37px;
+  border-radius: 10px;
+`;
+export { Input, SearchInput };

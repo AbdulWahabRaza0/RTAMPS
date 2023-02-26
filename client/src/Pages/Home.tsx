@@ -6,6 +6,9 @@ import { P } from "../Components/Typography";
 import { Image } from "../Components/Image";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { Button, Select } from "../Components/Buttons";
+import { SearchInput } from "../Components/Inputs";
+import { useMediaQuery } from "react-responsive";
 import {
   PublishIcon,
   DownloadIcon,
@@ -23,10 +26,10 @@ const CardsData = [
     name: "Virus",
     src: "/assets/virus.png",
   },
-  {
-    name: "Archea",
-    src: "/assets/archea.png",
-  },
+  // {
+  //   name: "Archea",
+  //   src: "/assets/archea.png",
+  // },
   {
     name: "Fungi",
     src: "/assets/fungi.png",
@@ -43,45 +46,60 @@ const CardsData = [
     name: "Protist",
     src: "/assets/protist.png",
   },
-  {
-    name: "Protozoa",
-    src: "/assets/protozoa.png",
-  },
+  // {
+  //   name: "Protozoa",
+  //   src: "/assets/protozoa.png",
+  // },
 ];
 const LinksData = ["About the NCBI", "Mission", "Organization", " NCBI News"];
 const CardStyle = styled(Wrapper)`
   cursor: pointer;
   color: #012761;
   &:hover {
-    background: #f4ea56;
+    // background: #f4ea56;
+    box-shadow: 10px 10px 10px #f4ea56;
   }
 `;
 const Home = () => {
   const router = useNavigate();
+  const isResponsive = useMediaQuery({ query: "(max-width: 487px)" });
 
   return (
     <>
       <Wrapper>
         <Spacer height="30px" />
-        <Wrapper family="Figtree" className="text-center">
-          <P weight="900" size="30px">
-            NEXT GEN
-          </P>
-          <P weight="700" size="30px">
-            WEB3 INTELLIGENCE
-          </P>
+        <Wrapper className="d-flex flex-row align-items-center justify-content-center ms-2 me-2">
+          <Select
+            ps={isResponsive ? "0px" : "25px"}
+            pe={isResponsive ? "0px" : "25px"}
+            fontSize={isResponsive ? "16px" : "21px"}
+            name="bioMedical"
+            id="bioMedical"
+          >
+            <option value="AMPs Name">AMPs Name</option>
+            <option value="GI No">GI No</option>
+            <option value="Accession No">Accession No</option>
+          </Select>
+          <SearchInput className={isResponsive ? "ms-1 me-1" : "ms-3 me-3"} />
+          <Button
+            ps={isResponsive ? "10px" : "25px"}
+            pe={isResponsive ? "10px" : "25px"}
+            fontSize={isResponsive ? "16px" : "21px"}
+          >
+            Search
+          </Button>
         </Wrapper>
 
         <Spacer height="40px" />
-        <Wrapper ms="10%" me="10%" family="Signika">
+        <Wrapper ms="20%" me="20%" family="Signika">
           <Row className="align-items-center justify-content-center">
             {CardsData.map((val, index) => {
               return (
                 <>
                   <Col
-                    md={3}
-                    sm={3}
-                    lg={3}
+                    md={4}
+                    sm={4}
+                    lg={4}
                     className="d-flex flex-row justify-content-center"
                     style={{ marginTop: "43px", marginBottom: "43px" }}
                   >
@@ -91,6 +109,7 @@ const Home = () => {
                       border="1px solid gray"
                       borderRadius="10px"
                       className="text-center pt-3"
+                      style={{ boxShadow: "5px 5px 5px gray" }}
                       onClick={() => {
                         router(`/${val.name.toLowerCase()}`, {
                           state: index + 1,

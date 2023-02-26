@@ -12,7 +12,7 @@ import Animal from "./Pages/Animal";
 import Plants from "./Pages/Plants";
 import Protist from "./Pages/Protist";
 import Protozia from "./Pages/Protozia";
-
+import LinkOpen from "./Pages/LinkOpen";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 const App = () => {
@@ -32,6 +32,7 @@ const App = () => {
         <Route path="/plants" element={<Plants />} />
         <Route path="/protist" element={<Protist />} />
         <Route path="/protozia" element={<Protozia />} />
+        <Route path="/bacteria/*" element={<LinkOpen />} />
       </Routes>
       <Footer />
     </>

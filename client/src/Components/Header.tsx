@@ -2,37 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Wrapper, SpanWrapper } from "./Layout";
 import { useNavigate } from "react-router-dom";
 import { Image } from "./Image";
-import logo from "../assets/logo.svg";
 import { P } from "./Typography";
-import {
-  FoundationIcon,
-  MiscellaneousServicesIcon,
-  ConnectWithoutContactIcon,
-  QuestionMarkIcon,
-  BarChartIcon,
-} from "./Icons";
+import { headerLinks } from "../utils/importantData";
 import { useMediaQuery } from "react-responsive";
 import Drawer from "./Drawer";
 import styled from "styled-components";
 const CardWrapper = styled(SpanWrapper)``;
-const headerLinks = [
-  {
-    name: "Home",
-    icon: FoundationIcon,
-  },
-  {
-    name: " Services",
-    icon: MiscellaneousServicesIcon,
-  },
-  {
-    name: " Contact",
-    icon: ConnectWithoutContactIcon,
-  },
-  {
-    name: "About",
-    icon: QuestionMarkIcon,
-  },
-];
+
 const Header = () => {
   const isResponsive = useMediaQuery({ query: "(max-width: 487px)" });
   const [mount, setMount] = useState(false);
@@ -46,7 +22,8 @@ const Header = () => {
       {isResponsive ? (
         <>
           <Wrapper
-            color="#012761"
+            // color="#012761"
+            color="#FFC23B"
             className="d-flex flex-row justify-content-end align-items-center p-2"
             family="Signika"
           >
@@ -56,7 +33,7 @@ const Header = () => {
       ) : (
         <Wrapper
           color="#012761"
-          className="d-flex flex-row justify-content-start align-items-center p-2"
+          className="d-flex flex-row justify-content-end align-items-center p-2"
           family="Signika"
         >
           {headerLinks.map((val, index) => {
@@ -64,9 +41,9 @@ const Header = () => {
               <>
                 <CardWrapper
                   mb="0px"
-                  mt="5px"
-                  ms="15px"
-                  me="15px"
+                  mt="7px"
+                  ms="25px"
+                  me="25px"
                   key={index}
                   onClick={() => {
                     showLink(index);
@@ -77,12 +54,17 @@ const Header = () => {
                 >
                   <P
                     weight="900"
+                    size="22px"
                     className="mb-0 d-flex flex-row align-items-center"
-                    style={{ height: "20px", cursor: "pointer" }}
+                    style={{
+                      height: "20px",
+                      cursor: "pointer",
+                      borderBottom: index === link ? "2px solid black" : "",
+                      // textShadow: index === link ? "4px 4px 10px gray" : "",
+                    }}
                     color="#012761"
-                    td={index === link ? "underline" : ""}
+                    // td={index === link ? "underline" : ""}
                   >
-                    <val.icon />
                     {val.name}
                   </P>
                 </CardWrapper>
@@ -93,15 +75,26 @@ const Header = () => {
       )}
 
       <Wrapper
-        className="d-flex flex-row justify-content-center ps-4"
+        className="d-flex flex-row justify-content-center align-items-center"
         bg="#012761"
       >
-        <Image
-          src={logo}
-          alt="Logo"
-          width={isResponsive ? 250 : 350}
-          height={110}
-        />
+        <Wrapper className="d-flex flex-column align-items-center justify-content-center mt-3">
+          <Image
+            src="/assets/logo.png"
+            alt="Logo"
+            width={isResponsive ? 250 : 350}
+            height={100}
+          />
+          <P
+            className="mb-3"
+            size={isResponsive ? "16px" : "21px"}
+            color="#FFC23B"
+            weight="450"
+            tt="uppercase"
+          >
+            A real time database for microbial peptides
+          </P>
+        </Wrapper>
       </Wrapper>
     </>
   ) : (

@@ -5,7 +5,7 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import FoundationIcon from "@mui/icons-material/Foundation";
 import MiscellaneousServicesIcon from "@mui/icons-material/MiscellaneousServices";
 import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact";
-import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
+import InfoIcon from "@mui/icons-material/Info";
 import PublishIcon from "@mui/icons-material/Publish";
 import DownloadIcon from "@mui/icons-material/Download";
 import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
@@ -20,7 +20,7 @@ export {
   FoundationIcon,
   MiscellaneousServicesIcon,
   ConnectWithoutContactIcon,
-  QuestionMarkIcon,
+  InfoIcon,
   PublishIcon,
   DownloadIcon,
   LocalLibraryIcon,
