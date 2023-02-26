@@ -5,10 +5,10 @@ import { P } from "../Components/Typography";
 import { Input } from "../Components/Inputs";
 import Pagination from "@mui/material/Pagination";
 import PaginationItem from "@mui/material/PaginationItem";
-import usePagination from "../Components/Pagination";
+// import usePagination from "../Components/Pagination";
 import Stack from "@mui/material/Stack";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { default as data } from "../utils/MOCK_DATA.json";
+// import { default as data } from "../utils/MOCK_DATA.json";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import SearchIcon from "@mui/icons-material/Search";
 import { useMediaQuery } from "react-responsive";
@@ -24,85 +24,6 @@ const LinkP = styled(P)`
     text-decoration-thickness: 2px;
   }
 `;
-const LinksData = [
-  {
-    headline: "antimicrobial peptides [Oryza sativa Japonica Group]",
-    subInfo: " 392 aa protein",
-    ref: " Accession: XP_015615526.1 GI: 1002304331",
-    link1: "Physicochemical properties",
-    link2: "FASTA",
-    link3: "Structure",
-    data: `LOCUS       XP_015615526             392 aa            linear   PLN 07-AUG-2018
-    DEFINITION  antimicrobial peptides [Oryza sativa Japonica Group].
-    ACCESSION   XP_015615526
-    VERSION     XP_015615526.1
-    DBLINK      BioProject: PRJNA122
-    DBSOURCE    REFSEQ: accession XM_015760040.2
-    KEYWORDS    RefSeq.
-    SOURCE      Oryza sativa Japonica Group (Japanese rice)
-      ORGANISM  Oryza sativa Japonica Group
-                Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;
-                Spermatophyta; Magnoliopsida; Liliopsida; Poales; Poaceae; BOP
-                clade; Oryzoideae; Oryzeae; Oryzinae; Oryza; Oryza sativa.
-    COMMENT     MODEL REFSEQ:  This record is predicted by automated computational
-                analysis. This record is derived from a genomic sequence
-                (NC_029266.1) annotated using gene prediction method: Gnomon,
-                supported by mRNA and EST evidence.
-                Also see:
-                    Documentation of NCBI's Annotation Process
-                
-                ##Genome-Annotation-Data-START##
-                Annotation Provider         :: NCBI
-                Annotation Status           :: Full annotation
-                Annotation Name             :: Oryza sativa Japonica Group
-                                               Annotation Release 102
-                Annotation Version          :: 102
-                Annotation Pipeline         :: NCBI eukaryotic genome annotation
-                                               pipeline
-                Annotation Software Version :: 8.1
-                Annotation Method           :: Best-placed RefSeq; Gnomon
-                Features Annotated          :: Gene; mRNA; CDS; ncRNA
-                ##Genome-Annotation-Data-END##
-                COMPLETENESS: full length.
-    FEATURES             Location/Qualifiers
-         source          1..392
-                         /organism="Oryza sativa Japonica Group"
-                         /cultivar="Nipponbare"
-                         /db_xref="taxon:39947"
-                         /chromosome="11"
-         Protein         1..392
-                         /product="antimicrobial peptides"
-                         /calculated_mol_wt=47254
-         Region          164..193
-                         /region_name="Antimicrobial21"
-                         /note="Plant antimicrobial peptide; pfam14861"
-                         /db_xref="CDD:405540"
-         Region          209..238
-                         /region_name="Antimicrobial21"
-                         /note="Plant antimicrobial peptide; pfam14861"
-                         /db_xref="CDD:405540"
-         Region          251..280
-                         /region_name="Antimicrobial21"
-                         /note="Plant antimicrobial peptide; pfam14861"
-                         /db_xref="CDD:405540"
-         Region          300..329
-                         /region_name="Antimicrobial21"
-                         /note="Plant antimicrobial peptide; pfam14861"
-                         /db_xref="CDD:405540"
-         CDS             1..392
-                         /gene="LOC4350789"
-                         /coded_by="XM_015760040.2:88..1266"
-                         /db_xref="GeneID:4350789"
-    ORIGIN      
-            1 mgvkwkggga llllaaglll vavaaaaaee egrrdpkeel rwckkqcrwe agqdqrqlre
-           61 ceeqclqrqq edddddenth ggggkecrre crgyrdepwr kqecmrqcew rrheqhhhgg
-          121 ghggsrpdcr eqcehqqdww ekqrclmdcr hrrqevdadd dnhhgrdpcy kqcrhhhdqw
-          181 kkqqcmeecr yhqrqqdaav dvdeeddnhg gdrcrkqcqh hhdqwkkqqc iqdcryhhrq
-          241 eddvveeedg hgdqqcrkqc qhhhdqwkkq qcmqdcrqwr rqeeeeaavd eeedhnygge
-          301 reqhcrkrcq hhhdqwkrqq cmqdcryrrq eeddvvdddn hhggggghgg dhcrrqcqhh
-          361 rewherqrcm rdcherrhgw atvaaeailq a`,
-  },
-];
 const Bacteria = () => {
   const isResponsive = useMediaQuery({ query: "(max-width: 487px)" });
   const router = useNavigate();
@@ -111,9 +32,22 @@ const Bacteria = () => {
   const [mount, setMount] = useState(false);
   let [page, setPage] = useState(1);
   const [dropdown, setDropDown] = useState("");
+  const [data, setData] = useState<any>();
+  const [count, setCount] = useState(0);
+  const [_DATA, set_DATA] = useState<any>();
+  const [currentPage, setCurrentPage] = useState(1);
   const PER_PAGE = 10;
-  const count = Math.ceil(data.length / PER_PAGE);
-  const _DATA = usePagination(data, PER_PAGE);
+
+  function currentData(currentPage: any, itemsPerPage: any = PER_PAGE) {
+    const begin = (currentPage - 1) * itemsPerPage;
+    const end = begin + itemsPerPage;
+    return data.slice(begin, end);
+  }
+
+  function jump(page: any) {
+    const pageNumber = Math.max(1, page);
+    setCurrentPage((currentPage) => Math.min(pageNumber, count));
+  }
   const GettingData = async () => {
     const res = await fetch("http://localhost:5000/links_data", {
       method: "GET",
@@ -122,12 +56,18 @@ const Bacteria = () => {
         "Content-Type": "application/json",
       },
     });
-    const data = await res.json();
-    if (data.message === "done") {
+
+    const dataMain = await res.json();
+
+    if (dataMain.message === "done") {
+      setData(dataMain.data);
+      // console.log("Data is ", data?data);
+      const temp1 = Math.ceil(data?.length / PER_PAGE);
+      temp1 ? setCount(temp1) : null;
+      console.log("Data is ", +data?.length);
       setMount(true);
-      console.log("This is data ", data.data);
     } else {
-      console.log("Here is no data ");
+      setMount(false);
     }
   };
 
@@ -136,16 +76,14 @@ const Bacteria = () => {
       await GettingData();
     }
     loadData();
-    return () => {
-      setMount(true);
-    };
-  }, [location]);
+    return () => {};
+  }, [mount]);
   const handleChange = (e: any, p: any) => {
     setPage(p);
-    _DATA?.jump(p);
+    jump(p);
   };
 
-  return mount && data && count && _DATA ? (
+  return mount && count ? (
     <>
       {/* <Wrapper className="d-flex flex-row justify-content-center align-items-center mt-5">
         <Wrapper
@@ -177,6 +115,7 @@ const Bacteria = () => {
           </Wrapper>
         </Wrapper>
       </Wrapper> */}
+
       <Spacer height="30px" />
       <Wrapper className="d-flex flex-row align-items-center justify-content-center ms-2 me-2">
         <Select
@@ -220,7 +159,7 @@ const Bacteria = () => {
           <P weight="500" color="#012761">
             Page {page} to {PER_PAGE} of {count}
           </P>
-          {_DATA.currentData().map((v: any, index: any) => {
+          {currentData(currentPage).map((val: any, index: any) => {
             return (
               <>
                 <div key={index} className="mt-4">
@@ -246,33 +185,33 @@ const Bacteria = () => {
                         color="#012761"
                         onClick={() => {
                           router(`/bacteria/${index + page * PER_PAGE - 9}`, {
-                            state: LinksData[0].data,
+                            state: val.data,
                           });
                         }}
                       >
                         {/* antimicrobial peptides [Oryza sativa Japonica Group] */}
-                        {LinksData[0].headline}
+                        {val.headline}
                       </LinkP>
                       <P weight="500" className="mb-0">
                         {/* 392 aa protein */}
-                        {LinksData[0].subInfo}
+                        {val.subInfo}
                       </P>
                       <P size="12px" className="mb-1">
                         {/* Accession: XP_015615526.1 GI: 1002304331 */}
-                        {LinksData[0].ref}
+                        {val.ref}
                       </P>
                       <Wrapper className="d-flex flex-row">
                         <LinkP className="mb-0" td="underline" size="12px">
                           {/* BioProject */}
-                          {LinksData[0].link1}
+                          {val.link1}
                         </LinkP>
                         <LinkP className="ms-3 mb-0" td="underline" size="12px">
                           {/* Nucleotide */}
-                          {LinksData[0].link2}
+                          {val.link2}
                         </LinkP>
                         <LinkP className="ms-3 mb-0" td="underline" size="12px">
                           {/* Taxonomy */}
-                          {LinksData[0].link3}
+                          {val.link3}
                         </LinkP>
                       </Wrapper>
                     </Wrapper>
@@ -298,7 +237,7 @@ const Bacteria = () => {
       </Wrapper>
     </>
   ) : (
-    <></>
+    <>Hello</>
   );
 };
 

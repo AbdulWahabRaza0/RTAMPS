@@ -56,8 +56,7 @@ const CardStyle = styled(Wrapper)`
   cursor: pointer;
   color: #012761;
   &:hover {
-    // background: #f4ea56;
-    box-shadow: 10px 10px 10px #f4ea56;
+    box-shadow: 5px 5px 10px 5px gray;
   }
 `;
 const Home = () => {
@@ -69,7 +68,7 @@ const Home = () => {
       <Wrapper>
         <Spacer height="30px" />
         <Wrapper className="d-flex flex-row align-items-center justify-content-center ms-2 me-2">
-          <Select
+          {/* <Select
             ps={isResponsive ? "0px" : "25px"}
             pe={isResponsive ? "0px" : "25px"}
             fontSize={isResponsive ? "16px" : "21px"}
@@ -87,7 +86,7 @@ const Home = () => {
             fontSize={isResponsive ? "16px" : "21px"}
           >
             Search
-          </Button>
+          </Button> */}
         </Wrapper>
 
         <Spacer height="40px" />
@@ -109,9 +108,8 @@ const Home = () => {
                       border="1px solid gray"
                       borderRadius="10px"
                       className="text-center pt-3"
-                      style={{ boxShadow: "5px 5px 5px gray" }}
                       onClick={() => {
-                        router(`/${val.name.toLowerCase()}`, {
+                        router(`/bacteria`, {
                           state: index + 1,
                         });
                       }}
