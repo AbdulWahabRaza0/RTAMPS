@@ -2,6 +2,9 @@ import { Row, Col, Container } from "react-bootstrap";
 import styled from "styled-components";
 import { Image } from "./Image";
 import { P } from "./Typography";
+import { useMediaQuery } from "react-responsive";
+import { Select, Button } from "../Components/Buttons";
+import { SearchInput } from "../Components/Inputs";
 interface WrapperProps {
   size?: string;
   color?: string;
@@ -39,6 +42,13 @@ const SpanWrapper = styled.span<WrapperProps>`
   margin-top: ${(props) => (props.mt ? props.mt : "")};
   margin-bottom: ${(props) => (props.mb ? props.mb : "")};
 `;
+const LinkP = styled(P)`
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+  }
+`;
 interface CardCompProps {
   name: string;
   src: string;
@@ -59,4 +69,41 @@ const CardComp = (props: CardCompProps) => {
     </Wrapper>
   );
 };
-export { Row, Col, Container, Wrapper, SpanWrapper, CardComp };
+const SearchBar = () => {
+  const isResponsive = useMediaQuery({ query: "(max-width: 487px)" });
+  return (
+    <>
+      <Wrapper className="d-flex flex-row align-items-center justify-content-center ms-2 me-2">
+        <Select
+          ps={isResponsive ? "0px" : "25px"}
+          pe={isResponsive ? "0px" : "25px"}
+          fontSize={isResponsive ? "16px" : "21px"}
+          name="bioMedical"
+          id="bioMedical"
+        >
+          <option value="AMPs Name">AMPs Name</option>
+          <option value="GI No">GI No</option>
+          <option value="Accession No">Accession No</option>
+        </Select>
+        <SearchInput className={isResponsive ? "ms-1 me-1" : "ms-3 me-3"} />
+        <Button
+          ps={isResponsive ? "10px" : "25px"}
+          pe={isResponsive ? "10px" : "25px"}
+          fontSize={isResponsive ? "16px" : "21px"}
+        >
+          Search
+        </Button>
+      </Wrapper>
+    </>
+  );
+};
+export {
+  Row,
+  Col,
+  Container,
+  Wrapper,
+  SpanWrapper,
+  CardComp,
+  SearchBar,
+  LinkP,
+};

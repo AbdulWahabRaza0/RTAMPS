@@ -60,10 +60,8 @@ const Header = () => {
                       height: "20px",
                       cursor: "pointer",
                       borderBottom: index === link ? "2px solid black" : "",
-                      // textShadow: index === link ? "4px 4px 10px gray" : "",
                     }}
                     color="#012761"
-                    // td={index === link ? "underline" : ""}
                   >
                     {val.name}
                   </P>
