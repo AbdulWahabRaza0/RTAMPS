@@ -42,7 +42,7 @@ const Virus = () => {
         className="d-flex flex-column justify-content-center align-items-center mt-5"
         width="100%"
       >
-        <PaginationComp data={data} pageName="bacteria" />
+        <PaginationComp data={data} pageName="virus" />
       </Wrapper>
     </>
   ) : (
