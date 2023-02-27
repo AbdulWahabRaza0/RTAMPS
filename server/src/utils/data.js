@@ -6,75 +6,181 @@ const data = [
     link1: "Physicochemical properties",
     link2: "FASTA",
     link3: "Structure",
-    data: `LOCUS       XP_015615526             392 aa            linear   PLN 07-AUG-2018
-    DEFINITION  antimicrobial peptides [Oryza sativa Japonica Group].
-    ACCESSION   XP_015615526
-    VERSION     XP_015615526.1
-    DBLINK      BioProject: PRJNA122
-    DBSOURCE    REFSEQ: accession XM_015760040.2
-    KEYWORDS    RefSeq.
-    SOURCE      Oryza sativa Japonica Group (Japanese rice)
-      ORGANISM  Oryza sativa Japonica Group
-                Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;
-                Spermatophyta; Magnoliopsida; Liliopsida; Poales; Poaceae; BOP
-                clade; Oryzoideae; Oryzeae; Oryzinae; Oryza; Oryza sativa.
-    COMMENT     MODEL REFSEQ:  This record is predicted by automated computational
-                analysis. This record is derived from a genomic sequence
-                (NC_029266.1) annotated using gene prediction method: Gnomon,
-                supported by mRNA and EST evidence.
-                Also see:
-                    Documentation of NCBI's Annotation Process
-                
-                ##Genome-Annotation-Data-START##
-                Annotation Provider         :: NCBI
-                Annotation Status           :: Full annotation
-                Annotation Name             :: Oryza sativa Japonica Group
-                                               Annotation Release 102
-                Annotation Version          :: 102
-                Annotation Pipeline         :: NCBI eukaryotic genome annotation
-                                               pipeline
-                Annotation Software Version :: 8.1
-                Annotation Method           :: Best-placed RefSeq; Gnomon
-                Features Annotated          :: Gene; mRNA; CDS; ncRNA
-                ##Genome-Annotation-Data-END##
-                COMPLETENESS: full length.
-    FEATURES             Location/Qualifiers
-         source          1..392
-                         /organism="Oryza sativa Japonica Group"
-                         /cultivar="Nipponbare"
-                         /db_xref="taxon:39947"
-                         /chromosome="11"
-         Protein         1..392
-                         /product="antimicrobial peptides"
-                         /calculated_mol_wt=47254
-         Region          164..193
-                         /region_name="Antimicrobial21"
-                         /note="Plant antimicrobial peptide; pfam14861"
-                         /db_xref="CDD:405540"
-         Region          209..238
-                         /region_name="Antimicrobial21"
-                         /note="Plant antimicrobial peptide; pfam14861"
-                         /db_xref="CDD:405540"
-         Region          251..280
-                         /region_name="Antimicrobial21"
-                         /note="Plant antimicrobial peptide; pfam14861"
-                         /db_xref="CDD:405540"
-         Region          300..329
-                         /region_name="Antimicrobial21"
-                         /note="Plant antimicrobial peptide; pfam14861"
-                         /db_xref="CDD:405540"
-         CDS             1..392
-                         /gene="LOC4350789"
-                         /coded_by="XM_015760040.2:88..1266"
-                         /db_xref="GeneID:4350789"
-    ORIGIN      
-            1 mgvkwkggga llllaaglll vavaaaaaee egrrdpkeel rwckkqcrwe agqdqrqlre
-           61 ceeqclqrqq edddddenth ggggkecrre crgyrdepwr kqecmrqcew rrheqhhhgg
-          121 ghggsrpdcr eqcehqqdww ekqrclmdcr hrrqevdadd dnhhgrdpcy kqcrhhhdqw
-          181 kkqqcmeecr yhqrqqdaav dvdeeddnhg gdrcrkqcqh hhdqwkkqqc iqdcryhhrq
-          241 eddvveeedg hgdqqcrkqc qhhhdqwkkq qcmqdcrqwr rqeeeeaavd eeedhnygge
-          301 reqhcrkrcq hhhdqwkrqq cmqdcryrrq eeddvvdddn hhggggghgg dhcrrqcqhh
-          361 rewherqrcm rdcherrhgw atvaaeailq a`,
+    link1Data: {
+      aminoAcid: {
+        name: "Amino Acid Composition",
+        data: [
+          {
+            name: "Tiny Number",
+            val: 0,
+          },
+          {
+            name: "Small Number",
+            val: 0,
+          },
+          {
+            name: "Aliphatic Number",
+            val: 0,
+          },
+
+          {
+            name: "Aromatic Number",
+            val: 3,
+          },
+          {
+            name: "Non Polar Number",
+            val: 3,
+          },
+          {
+            name: "Polar Number",
+            val: 3,
+          },
+          {
+            name: "Charged Number",
+            val: 3,
+          },
+          {
+            name: "Basic Number",
+            val: 3,
+          },
+          {
+            name: "Acidic Number",
+            val: 0,
+          },
+          {
+            name: "Tiny Mole",
+            val: 0,
+          },
+          {
+            name: "Small Mole",
+            val: 0,
+          },
+          {
+            name: "Aliphatic Mole",
+            val: 0,
+          },
+          {
+            name: "Aromatic Mole",
+            val: 0,
+          },
+          {
+            name: "Non Polar Mole",
+            val: 0,
+          },
+          {
+            name: "Polar Mole",
+            val: 0,
+          },
+          {
+            name: "Charged Mole",
+            val: 0,
+          },
+          {
+            name: "Basic Mole",
+            val: 50,
+          },
+          {
+            name: "Acidic Mole",
+            val: 0,
+          },
+        ],
+      },
+      remainData: [
+        {
+          name: "Molecular Weight",
+          val: 1006,
+        },
+        {
+          name: "Length of Peptides",
+          val: 6,
+        },
+        {
+          name: "Net Charges Protein",
+          val: 3,
+        },
+        {
+          name: "ISI Electric Points",
+          val: 13,
+        },
+        {
+          name: "Aliphatic Index of Protein",
+          val: 0,
+        },
+        {
+          name: "INstability Index",
+          val: 199,
+        },
+        {
+          name: "Boman Index",
+          val: 6,
+        },
+        {
+          name: "Hydrophobic Moment",
+          val: 1,
+        },
+        {
+          name: "Aa Smiles",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Aa Smiles",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Bisum Induces",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Hydrophobicity",
+          val: -2,
+        },
+        {
+          name: "Cruciani Properties",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Fasgai Vector",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Jidera Factor",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Mess Shift",
+          val: 0,
+        },
+        {
+          name: "Membrane Position",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "MSW Him Score",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Prot FP",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "ST Scales",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "T Scale",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+      ],
+    },
+    link2Data: {
+      name: "Fasta Tab",
+      fastaTab: {
+        title: "Chain A, cRW3 cationic antimicrobial peptide",
+        link: "PDB 2OTQ A",
+        ref: ">pdb |2OTQ| A Chain A, cRW3 cationic antimicrobial peptide RRWFWR",
+      },
+    },
+    link3Data: { name: "Structure", struct: { img: "/assets/bacteria.png" } },
   },
   {
     headline: "antimicrobial peptides [Oryza sativa Japonica Group]",
@@ -83,75 +189,181 @@ const data = [
     link1: "Physicochemical properties",
     link2: "FASTA",
     link3: "Structure",
-    data: `LOCUS       XP_015615526             392 aa            linear   PLN 07-AUG-2018
-    DEFINITION  antimicrobial peptides [Oryza sativa Japonica Group].
-    ACCESSION   XP_015615526
-    VERSION     XP_015615526.1
-    DBLINK      BioProject: PRJNA122
-    DBSOURCE    REFSEQ: accession XM_015760040.2
-    KEYWORDS    RefSeq.
-    SOURCE      Oryza sativa Japonica Group (Japanese rice)
-      ORGANISM  Oryza sativa Japonica Group
-                Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;
-                Spermatophyta; Magnoliopsida; Liliopsida; Poales; Poaceae; BOP
-                clade; Oryzoideae; Oryzeae; Oryzinae; Oryza; Oryza sativa.
-    COMMENT     MODEL REFSEQ:  This record is predicted by automated computational
-                analysis. This record is derived from a genomic sequence
-                (NC_029266.1) annotated using gene prediction method: Gnomon,
-                supported by mRNA and EST evidence.
-                Also see:
-                    Documentation of NCBI's Annotation Process
-                
-                ##Genome-Annotation-Data-START##
-                Annotation Provider         :: NCBI
-                Annotation Status           :: Full annotation
-                Annotation Name             :: Oryza sativa Japonica Group
-                                               Annotation Release 102
-                Annotation Version          :: 102
-                Annotation Pipeline         :: NCBI eukaryotic genome annotation
-                                               pipeline
-                Annotation Software Version :: 8.1
-                Annotation Method           :: Best-placed RefSeq; Gnomon
-                Features Annotated          :: Gene; mRNA; CDS; ncRNA
-                ##Genome-Annotation-Data-END##
-                COMPLETENESS: full length.
-    FEATURES             Location/Qualifiers
-         source          1..392
-                         /organism="Oryza sativa Japonica Group"
-                         /cultivar="Nipponbare"
-                         /db_xref="taxon:39947"
-                         /chromosome="11"
-         Protein         1..392
-                         /product="antimicrobial peptides"
-                         /calculated_mol_wt=47254
-         Region          164..193
-                         /region_name="Antimicrobial21"
-                         /note="Plant antimicrobial peptide; pfam14861"
-                         /db_xref="CDD:405540"
-         Region          209..238
-                         /region_name="Antimicrobial21"
-                         /note="Plant antimicrobial peptide; pfam14861"
-                         /db_xref="CDD:405540"
-         Region          251..280
-                         /region_name="Antimicrobial21"
-                         /note="Plant antimicrobial peptide; pfam14861"
-                         /db_xref="CDD:405540"
-         Region          300..329
-                         /region_name="Antimicrobial21"
-                         /note="Plant antimicrobial peptide; pfam14861"
-                         /db_xref="CDD:405540"
-         CDS             1..392
-                         /gene="LOC4350789"
-                         /coded_by="XM_015760040.2:88..1266"
-                         /db_xref="GeneID:4350789"
-    ORIGIN      
-            1 mgvkwkggga llllaaglll vavaaaaaee egrrdpkeel rwckkqcrwe agqdqrqlre
-           61 ceeqclqrqq edddddenth ggggkecrre crgyrdepwr kqecmrqcew rrheqhhhgg
-          121 ghggsrpdcr eqcehqqdww ekqrclmdcr hrrqevdadd dnhhgrdpcy kqcrhhhdqw
-          181 kkqqcmeecr yhqrqqdaav dvdeeddnhg gdrcrkqcqh hhdqwkkqqc iqdcryhhrq
-          241 eddvveeedg hgdqqcrkqc qhhhdqwkkq qcmqdcrqwr rqeeeeaavd eeedhnygge
-          301 reqhcrkrcq hhhdqwkrqq cmqdcryrrq eeddvvdddn hhggggghgg dhcrrqcqhh
-          361 rewherqrcm rdcherrhgw atvaaeailq a`,
+    link1Data: {
+      aminoAcid: {
+        name: "Amino Acid Composition",
+        data: [
+          {
+            name: "Tiny Number",
+            val: 0,
+          },
+          {
+            name: "Small Number",
+            val: 0,
+          },
+          {
+            name: "Aliphatic Number",
+            val: 0,
+          },
+
+          {
+            name: "Aromatic Number",
+            val: 3,
+          },
+          {
+            name: "Non Polar Number",
+            val: 3,
+          },
+          {
+            name: "Polar Number",
+            val: 3,
+          },
+          {
+            name: "Charged Number",
+            val: 3,
+          },
+          {
+            name: "Basic Number",
+            val: 3,
+          },
+          {
+            name: "Acidic Number",
+            val: 0,
+          },
+          {
+            name: "Tiny Mole",
+            val: 0,
+          },
+          {
+            name: "Small Mole",
+            val: 0,
+          },
+          {
+            name: "Aliphatic Mole",
+            val: 0,
+          },
+          {
+            name: "Aromatic Mole",
+            val: 0,
+          },
+          {
+            name: "Non Polar Mole",
+            val: 0,
+          },
+          {
+            name: "Polar Mole",
+            val: 0,
+          },
+          {
+            name: "Charged Mole",
+            val: 0,
+          },
+          {
+            name: "Basic Mole",
+            val: 50,
+          },
+          {
+            name: "Acidic Mole",
+            val: 0,
+          },
+        ],
+      },
+      remainData: [
+        {
+          name: "Molecular Weight",
+          val: 1006,
+        },
+        {
+          name: "Length of Peptides",
+          val: 6,
+        },
+        {
+          name: "Net Charges Protein",
+          val: 3,
+        },
+        {
+          name: "ISI Electric Points",
+          val: 13,
+        },
+        {
+          name: "Aliphatic Index of Protein",
+          val: 0,
+        },
+        {
+          name: "INstability Index",
+          val: 199,
+        },
+        {
+          name: "Boman Index",
+          val: 6,
+        },
+        {
+          name: "Hydrophobic Moment",
+          val: 1,
+        },
+        {
+          name: "Aa Smiles",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Aa Smiles",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Bisum Induces",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Hydrophobicity",
+          val: -2,
+        },
+        {
+          name: "Cruciani Properties",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Fasgai Vector",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Jidera Factor",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Mess Shift",
+          val: 0,
+        },
+        {
+          name: "Membrane Position",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "MSW Him Score",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Prot FP",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "ST Scales",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "T Scale",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+      ],
+    },
+    link2Data: {
+      name: "Fasta Tab",
+      fastaTab: {
+        title: "Chain A, cRW3 cationic antimicrobial peptide",
+        link: "PDB 2OTQ A",
+        ref: ">pdb |2OTQ| A Chain A, cRW3 cationic antimicrobial peptide RRWFWR",
+      },
+    },
+    link3Data: { name: "Structure", struct: { img: "/assets/bacteria.png" } },
   },
   {
     headline: "antimicrobial peptides [Oryza sativa Japonica Group]",
@@ -160,75 +372,181 @@ const data = [
     link1: "Physicochemical properties",
     link2: "FASTA",
     link3: "Structure",
-    data: `LOCUS       XP_015615526             392 aa            linear   PLN 07-AUG-2018
-    DEFINITION  antimicrobial peptides [Oryza sativa Japonica Group].
-    ACCESSION   XP_015615526
-    VERSION     XP_015615526.1
-    DBLINK      BioProject: PRJNA122
-    DBSOURCE    REFSEQ: accession XM_015760040.2
-    KEYWORDS    RefSeq.
-    SOURCE      Oryza sativa Japonica Group (Japanese rice)
-      ORGANISM  Oryza sativa Japonica Group
-                Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;
-                Spermatophyta; Magnoliopsida; Liliopsida; Poales; Poaceae; BOP
-                clade; Oryzoideae; Oryzeae; Oryzinae; Oryza; Oryza sativa.
-    COMMENT     MODEL REFSEQ:  This record is predicted by automated computational
-                analysis. This record is derived from a genomic sequence
-                (NC_029266.1) annotated using gene prediction method: Gnomon,
-                supported by mRNA and EST evidence.
-                Also see:
-                    Documentation of NCBI's Annotation Process
-                
-                ##Genome-Annotation-Data-START##
-                Annotation Provider         :: NCBI
-                Annotation Status           :: Full annotation
-                Annotation Name             :: Oryza sativa Japonica Group
-                                               Annotation Release 102
-                Annotation Version          :: 102
-                Annotation Pipeline         :: NCBI eukaryotic genome annotation
-                                               pipeline
-                Annotation Software Version :: 8.1
-                Annotation Method           :: Best-placed RefSeq; Gnomon
-                Features Annotated          :: Gene; mRNA; CDS; ncRNA
-                ##Genome-Annotation-Data-END##
-                COMPLETENESS: full length.
-    FEATURES             Location/Qualifiers
-         source          1..392
-                         /organism="Oryza sativa Japonica Group"
-                         /cultivar="Nipponbare"
-                         /db_xref="taxon:39947"
-                         /chromosome="11"
-         Protein         1..392
-                         /product="antimicrobial peptides"
-                         /calculated_mol_wt=47254
-         Region          164..193
-                         /region_name="Antimicrobial21"
-                         /note="Plant antimicrobial peptide; pfam14861"
-                         /db_xref="CDD:405540"
-         Region          209..238
-                         /region_name="Antimicrobial21"
-                         /note="Plant antimicrobial peptide; pfam14861"
-                         /db_xref="CDD:405540"
-         Region          251..280
-                         /region_name="Antimicrobial21"
-                         /note="Plant antimicrobial peptide; pfam14861"
-                         /db_xref="CDD:405540"
-         Region          300..329
-                         /region_name="Antimicrobial21"
-                         /note="Plant antimicrobial peptide; pfam14861"
-                         /db_xref="CDD:405540"
-         CDS             1..392
-                         /gene="LOC4350789"
-                         /coded_by="XM_015760040.2:88..1266"
-                         /db_xref="GeneID:4350789"
-    ORIGIN      
-            1 mgvkwkggga llllaaglll vavaaaaaee egrrdpkeel rwckkqcrwe agqdqrqlre
-           61 ceeqclqrqq edddddenth ggggkecrre crgyrdepwr kqecmrqcew rrheqhhhgg
-          121 ghggsrpdcr eqcehqqdww ekqrclmdcr hrrqevdadd dnhhgrdpcy kqcrhhhdqw
-          181 kkqqcmeecr yhqrqqdaav dvdeeddnhg gdrcrkqcqh hhdqwkkqqc iqdcryhhrq
-          241 eddvveeedg hgdqqcrkqc qhhhdqwkkq qcmqdcrqwr rqeeeeaavd eeedhnygge
-          301 reqhcrkrcq hhhdqwkrqq cmqdcryrrq eeddvvdddn hhggggghgg dhcrrqcqhh
-          361 rewherqrcm rdcherrhgw atvaaeailq a`,
+    link1Data: {
+      aminoAcid: {
+        name: "Amino Acid Composition",
+        data: [
+          {
+            name: "Tiny Number",
+            val: 0,
+          },
+          {
+            name: "Small Number",
+            val: 0,
+          },
+          {
+            name: "Aliphatic Number",
+            val: 0,
+          },
+
+          {
+            name: "Aromatic Number",
+            val: 3,
+          },
+          {
+            name: "Non Polar Number",
+            val: 3,
+          },
+          {
+            name: "Polar Number",
+            val: 3,
+          },
+          {
+            name: "Charged Number",
+            val: 3,
+          },
+          {
+            name: "Basic Number",
+            val: 3,
+          },
+          {
+            name: "Acidic Number",
+            val: 0,
+          },
+          {
+            name: "Tiny Mole",
+            val: 0,
+          },
+          {
+            name: "Small Mole",
+            val: 0,
+          },
+          {
+            name: "Aliphatic Mole",
+            val: 0,
+          },
+          {
+            name: "Aromatic Mole",
+            val: 0,
+          },
+          {
+            name: "Non Polar Mole",
+            val: 0,
+          },
+          {
+            name: "Polar Mole",
+            val: 0,
+          },
+          {
+            name: "Charged Mole",
+            val: 0,
+          },
+          {
+            name: "Basic Mole",
+            val: 50,
+          },
+          {
+            name: "Acidic Mole",
+            val: 0,
+          },
+        ],
+      },
+      remainData: [
+        {
+          name: "Molecular Weight",
+          val: 1006,
+        },
+        {
+          name: "Length of Peptides",
+          val: 6,
+        },
+        {
+          name: "Net Charges Protein",
+          val: 3,
+        },
+        {
+          name: "ISI Electric Points",
+          val: 13,
+        },
+        {
+          name: "Aliphatic Index of Protein",
+          val: 0,
+        },
+        {
+          name: "INstability Index",
+          val: 199,
+        },
+        {
+          name: "Boman Index",
+          val: 6,
+        },
+        {
+          name: "Hydrophobic Moment",
+          val: 1,
+        },
+        {
+          name: "Aa Smiles",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Aa Smiles",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Bisum Induces",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Hydrophobicity",
+          val: -2,
+        },
+        {
+          name: "Cruciani Properties",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Fasgai Vector",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Jidera Factor",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Mess Shift",
+          val: 0,
+        },
+        {
+          name: "Membrane Position",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "MSW Him Score",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Prot FP",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "ST Scales",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "T Scale",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+      ],
+    },
+    link2Data: {
+      name: "Fasta Tab",
+      fastaTab: {
+        title: "Chain A, cRW3 cationic antimicrobial peptide",
+        link: "PDB 2OTQ A",
+        ref: ">pdb |2OTQ| A Chain A, cRW3 cationic antimicrobial peptide RRWFWR",
+      },
+    },
+    link3Data: { name: "Structure", struct: { img: "/assets/bacteria.png" } },
   },
   {
     headline: "antimicrobial peptides [Oryza sativa Japonica Group]",
@@ -237,75 +555,181 @@ const data = [
     link1: "Physicochemical properties",
     link2: "FASTA",
     link3: "Structure",
-    data: `LOCUS       XP_015615526             392 aa            linear   PLN 07-AUG-2018
-    DEFINITION  antimicrobial peptides [Oryza sativa Japonica Group].
-    ACCESSION   XP_015615526
-    VERSION     XP_015615526.1
-    DBLINK      BioProject: PRJNA122
-    DBSOURCE    REFSEQ: accession XM_015760040.2
-    KEYWORDS    RefSeq.
-    SOURCE      Oryza sativa Japonica Group (Japanese rice)
-      ORGANISM  Oryza sativa Japonica Group
-                Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;
-                Spermatophyta; Magnoliopsida; Liliopsida; Poales; Poaceae; BOP
-                clade; Oryzoideae; Oryzeae; Oryzinae; Oryza; Oryza sativa.
-    COMMENT     MODEL REFSEQ:  This record is predicted by automated computational
-                analysis. This record is derived from a genomic sequence
-                (NC_029266.1) annotated using gene prediction method: Gnomon,
-                supported by mRNA and EST evidence.
-                Also see:
-                    Documentation of NCBI's Annotation Process
-                
-                ##Genome-Annotation-Data-START##
-                Annotation Provider         :: NCBI
-                Annotation Status           :: Full annotation
-                Annotation Name             :: Oryza sativa Japonica Group
-                                               Annotation Release 102
-                Annotation Version          :: 102
-                Annotation Pipeline         :: NCBI eukaryotic genome annotation
-                                               pipeline
-                Annotation Software Version :: 8.1
-                Annotation Method           :: Best-placed RefSeq; Gnomon
-                Features Annotated          :: Gene; mRNA; CDS; ncRNA
-                ##Genome-Annotation-Data-END##
-                COMPLETENESS: full length.
-    FEATURES             Location/Qualifiers
-         source          1..392
-                         /organism="Oryza sativa Japonica Group"
-                         /cultivar="Nipponbare"
-                         /db_xref="taxon:39947"
-                         /chromosome="11"
-         Protein         1..392
-                         /product="antimicrobial peptides"
-                         /calculated_mol_wt=47254
-         Region          164..193
-                         /region_name="Antimicrobial21"
-                         /note="Plant antimicrobial peptide; pfam14861"
-                         /db_xref="CDD:405540"
-         Region          209..238
-                         /region_name="Antimicrobial21"
-                         /note="Plant antimicrobial peptide; pfam14861"
-                         /db_xref="CDD:405540"
-         Region          251..280
-                         /region_name="Antimicrobial21"
-                         /note="Plant antimicrobial peptide; pfam14861"
-                         /db_xref="CDD:405540"
-         Region          300..329
-                         /region_name="Antimicrobial21"
-                         /note="Plant antimicrobial peptide; pfam14861"
-                         /db_xref="CDD:405540"
-         CDS             1..392
-                         /gene="LOC4350789"
-                         /coded_by="XM_015760040.2:88..1266"
-                         /db_xref="GeneID:4350789"
-    ORIGIN      
-            1 mgvkwkggga llllaaglll vavaaaaaee egrrdpkeel rwckkqcrwe agqdqrqlre
-           61 ceeqclqrqq edddddenth ggggkecrre crgyrdepwr kqecmrqcew rrheqhhhgg
-          121 ghggsrpdcr eqcehqqdww ekqrclmdcr hrrqevdadd dnhhgrdpcy kqcrhhhdqw
-          181 kkqqcmeecr yhqrqqdaav dvdeeddnhg gdrcrkqcqh hhdqwkkqqc iqdcryhhrq
-          241 eddvveeedg hgdqqcrkqc qhhhdqwkkq qcmqdcrqwr rqeeeeaavd eeedhnygge
-          301 reqhcrkrcq hhhdqwkrqq cmqdcryrrq eeddvvdddn hhggggghgg dhcrrqcqhh
-          361 rewherqrcm rdcherrhgw atvaaeailq a`,
+    link1Data: {
+      aminoAcid: {
+        name: "Amino Acid Composition",
+        data: [
+          {
+            name: "Tiny Number",
+            val: 0,
+          },
+          {
+            name: "Small Number",
+            val: 0,
+          },
+          {
+            name: "Aliphatic Number",
+            val: 0,
+          },
+
+          {
+            name: "Aromatic Number",
+            val: 3,
+          },
+          {
+            name: "Non Polar Number",
+            val: 3,
+          },
+          {
+            name: "Polar Number",
+            val: 3,
+          },
+          {
+            name: "Charged Number",
+            val: 3,
+          },
+          {
+            name: "Basic Number",
+            val: 3,
+          },
+          {
+            name: "Acidic Number",
+            val: 0,
+          },
+          {
+            name: "Tiny Mole",
+            val: 0,
+          },
+          {
+            name: "Small Mole",
+            val: 0,
+          },
+          {
+            name: "Aliphatic Mole",
+            val: 0,
+          },
+          {
+            name: "Aromatic Mole",
+            val: 0,
+          },
+          {
+            name: "Non Polar Mole",
+            val: 0,
+          },
+          {
+            name: "Polar Mole",
+            val: 0,
+          },
+          {
+            name: "Charged Mole",
+            val: 0,
+          },
+          {
+            name: "Basic Mole",
+            val: 50,
+          },
+          {
+            name: "Acidic Mole",
+            val: 0,
+          },
+        ],
+      },
+      remainData: [
+        {
+          name: "Molecular Weight",
+          val: 1006,
+        },
+        {
+          name: "Length of Peptides",
+          val: 6,
+        },
+        {
+          name: "Net Charges Protein",
+          val: 3,
+        },
+        {
+          name: "ISI Electric Points",
+          val: 13,
+        },
+        {
+          name: "Aliphatic Index of Protein",
+          val: 0,
+        },
+        {
+          name: "INstability Index",
+          val: 199,
+        },
+        {
+          name: "Boman Index",
+          val: 6,
+        },
+        {
+          name: "Hydrophobic Moment",
+          val: 1,
+        },
+        {
+          name: "Aa Smiles",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Aa Smiles",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Bisum Induces",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Hydrophobicity",
+          val: -2,
+        },
+        {
+          name: "Cruciani Properties",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Fasgai Vector",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Jidera Factor",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Mess Shift",
+          val: 0,
+        },
+        {
+          name: "Membrane Position",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "MSW Him Score",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Prot FP",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "ST Scales",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "T Scale",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+      ],
+    },
+    link2Data: {
+      name: "Fasta Tab",
+      fastaTab: {
+        title: "Chain A, cRW3 cationic antimicrobial peptide",
+        link: "PDB 2OTQ A",
+        ref: ">pdb |2OTQ| A Chain A, cRW3 cationic antimicrobial peptide RRWFWR",
+      },
+    },
+    link3Data: { name: "Structure", struct: { img: "/assets/bacteria.png" } },
   },
   {
     headline: "antimicrobial peptides [Oryza sativa Japonica Group]",
@@ -314,75 +738,181 @@ const data = [
     link1: "Physicochemical properties",
     link2: "FASTA",
     link3: "Structure",
-    data: `LOCUS       XP_015615526             392 aa            linear   PLN 07-AUG-2018
-    DEFINITION  antimicrobial peptides [Oryza sativa Japonica Group].
-    ACCESSION   XP_015615526
-    VERSION     XP_015615526.1
-    DBLINK      BioProject: PRJNA122
-    DBSOURCE    REFSEQ: accession XM_015760040.2
-    KEYWORDS    RefSeq.
-    SOURCE      Oryza sativa Japonica Group (Japanese rice)
-      ORGANISM  Oryza sativa Japonica Group
-                Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;
-                Spermatophyta; Magnoliopsida; Liliopsida; Poales; Poaceae; BOP
-                clade; Oryzoideae; Oryzeae; Oryzinae; Oryza; Oryza sativa.
-    COMMENT     MODEL REFSEQ:  This record is predicted by automated computational
-                analysis. This record is derived from a genomic sequence
-                (NC_029266.1) annotated using gene prediction method: Gnomon,
-                supported by mRNA and EST evidence.
-                Also see:
-                    Documentation of NCBI's Annotation Process
-                
-                ##Genome-Annotation-Data-START##
-                Annotation Provider         :: NCBI
-                Annotation Status           :: Full annotation
-                Annotation Name             :: Oryza sativa Japonica Group
-                                               Annotation Release 102
-                Annotation Version          :: 102
-                Annotation Pipeline         :: NCBI eukaryotic genome annotation
-                                               pipeline
-                Annotation Software Version :: 8.1
-                Annotation Method           :: Best-placed RefSeq; Gnomon
-                Features Annotated          :: Gene; mRNA; CDS; ncRNA
-                ##Genome-Annotation-Data-END##
-                COMPLETENESS: full length.
-    FEATURES             Location/Qualifiers
-         source          1..392
-                         /organism="Oryza sativa Japonica Group"
-                         /cultivar="Nipponbare"
-                         /db_xref="taxon:39947"
-                         /chromosome="11"
-         Protein         1..392
-                         /product="antimicrobial peptides"
-                         /calculated_mol_wt=47254
-         Region          164..193
-                         /region_name="Antimicrobial21"
-                         /note="Plant antimicrobial peptide; pfam14861"
-                         /db_xref="CDD:405540"
-         Region          209..238
-                         /region_name="Antimicrobial21"
-                         /note="Plant antimicrobial peptide; pfam14861"
-                         /db_xref="CDD:405540"
-         Region          251..280
-                         /region_name="Antimicrobial21"
-                         /note="Plant antimicrobial peptide; pfam14861"
-                         /db_xref="CDD:405540"
-         Region          300..329
-                         /region_name="Antimicrobial21"
-                         /note="Plant antimicrobial peptide; pfam14861"
-                         /db_xref="CDD:405540"
-         CDS             1..392
-                         /gene="LOC4350789"
-                         /coded_by="XM_015760040.2:88..1266"
-                         /db_xref="GeneID:4350789"
-    ORIGIN      
-            1 mgvkwkggga llllaaglll vavaaaaaee egrrdpkeel rwckkqcrwe agqdqrqlre
-           61 ceeqclqrqq edddddenth ggggkecrre crgyrdepwr kqecmrqcew rrheqhhhgg
-          121 ghggsrpdcr eqcehqqdww ekqrclmdcr hrrqevdadd dnhhgrdpcy kqcrhhhdqw
-          181 kkqqcmeecr yhqrqqdaav dvdeeddnhg gdrcrkqcqh hhdqwkkqqc iqdcryhhrq
-          241 eddvveeedg hgdqqcrkqc qhhhdqwkkq qcmqdcrqwr rqeeeeaavd eeedhnygge
-          301 reqhcrkrcq hhhdqwkrqq cmqdcryrrq eeddvvdddn hhggggghgg dhcrrqcqhh
-          361 rewherqrcm rdcherrhgw atvaaeailq a`,
+    link1Data: {
+      aminoAcid: {
+        name: "Amino Acid Composition",
+        data: [
+          {
+            name: "Tiny Number",
+            val: 0,
+          },
+          {
+            name: "Small Number",
+            val: 0,
+          },
+          {
+            name: "Aliphatic Number",
+            val: 0,
+          },
+
+          {
+            name: "Aromatic Number",
+            val: 3,
+          },
+          {
+            name: "Non Polar Number",
+            val: 3,
+          },
+          {
+            name: "Polar Number",
+            val: 3,
+          },
+          {
+            name: "Charged Number",
+            val: 3,
+          },
+          {
+            name: "Basic Number",
+            val: 3,
+          },
+          {
+            name: "Acidic Number",
+            val: 0,
+          },
+          {
+            name: "Tiny Mole",
+            val: 0,
+          },
+          {
+            name: "Small Mole",
+            val: 0,
+          },
+          {
+            name: "Aliphatic Mole",
+            val: 0,
+          },
+          {
+            name: "Aromatic Mole",
+            val: 0,
+          },
+          {
+            name: "Non Polar Mole",
+            val: 0,
+          },
+          {
+            name: "Polar Mole",
+            val: 0,
+          },
+          {
+            name: "Charged Mole",
+            val: 0,
+          },
+          {
+            name: "Basic Mole",
+            val: 50,
+          },
+          {
+            name: "Acidic Mole",
+            val: 0,
+          },
+        ],
+      },
+      remainData: [
+        {
+          name: "Molecular Weight",
+          val: 1006,
+        },
+        {
+          name: "Length of Peptides",
+          val: 6,
+        },
+        {
+          name: "Net Charges Protein",
+          val: 3,
+        },
+        {
+          name: "ISI Electric Points",
+          val: 13,
+        },
+        {
+          name: "Aliphatic Index of Protein",
+          val: 0,
+        },
+        {
+          name: "INstability Index",
+          val: 199,
+        },
+        {
+          name: "Boman Index",
+          val: 6,
+        },
+        {
+          name: "Hydrophobic Moment",
+          val: 1,
+        },
+        {
+          name: "Aa Smiles",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Aa Smiles",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Bisum Induces",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Hydrophobicity",
+          val: -2,
+        },
+        {
+          name: "Cruciani Properties",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Fasgai Vector",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Jidera Factor",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Mess Shift",
+          val: 0,
+        },
+        {
+          name: "Membrane Position",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "MSW Him Score",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Prot FP",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "ST Scales",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "T Scale",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+      ],
+    },
+    link2Data: {
+      name: "Fasta Tab",
+      fastaTab: {
+        title: "Chain A, cRW3 cationic antimicrobial peptide",
+        link: "PDB 2OTQ A",
+        ref: ">pdb |2OTQ| A Chain A, cRW3 cationic antimicrobial peptide RRWFWR",
+      },
+    },
+    link3Data: { name: "Structure", struct: { img: "/assets/bacteria.png" } },
   },
   {
     headline: "antimicrobial peptides [Oryza sativa Japonica Group]",
@@ -391,75 +921,181 @@ const data = [
     link1: "Physicochemical properties",
     link2: "FASTA",
     link3: "Structure",
-    data: `LOCUS       XP_015615526             392 aa            linear   PLN 07-AUG-2018
-    DEFINITION  antimicrobial peptides [Oryza sativa Japonica Group].
-    ACCESSION   XP_015615526
-    VERSION     XP_015615526.1
-    DBLINK      BioProject: PRJNA122
-    DBSOURCE    REFSEQ: accession XM_015760040.2
-    KEYWORDS    RefSeq.
-    SOURCE      Oryza sativa Japonica Group (Japanese rice)
-      ORGANISM  Oryza sativa Japonica Group
-                Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;
-                Spermatophyta; Magnoliopsida; Liliopsida; Poales; Poaceae; BOP
-                clade; Oryzoideae; Oryzeae; Oryzinae; Oryza; Oryza sativa.
-    COMMENT     MODEL REFSEQ:  This record is predicted by automated computational
-                analysis. This record is derived from a genomic sequence
-                (NC_029266.1) annotated using gene prediction method: Gnomon,
-                supported by mRNA and EST evidence.
-                Also see:
-                    Documentation of NCBI's Annotation Process
-                
-                ##Genome-Annotation-Data-START##
-                Annotation Provider         :: NCBI
-                Annotation Status           :: Full annotation
-                Annotation Name             :: Oryza sativa Japonica Group
-                                               Annotation Release 102
-                Annotation Version          :: 102
-                Annotation Pipeline         :: NCBI eukaryotic genome annotation
-                                               pipeline
-                Annotation Software Version :: 8.1
-                Annotation Method           :: Best-placed RefSeq; Gnomon
-                Features Annotated          :: Gene; mRNA; CDS; ncRNA
-                ##Genome-Annotation-Data-END##
-                COMPLETENESS: full length.
-    FEATURES             Location/Qualifiers
-         source          1..392
-                         /organism="Oryza sativa Japonica Group"
-                         /cultivar="Nipponbare"
-                         /db_xref="taxon:39947"
-                         /chromosome="11"
-         Protein         1..392
-                         /product="antimicrobial peptides"
-                         /calculated_mol_wt=47254
-         Region          164..193
-                         /region_name="Antimicrobial21"
-                         /note="Plant antimicrobial peptide; pfam14861"
-                         /db_xref="CDD:405540"
-         Region          209..238
-                         /region_name="Antimicrobial21"
-                         /note="Plant antimicrobial peptide; pfam14861"
-                         /db_xref="CDD:405540"
-         Region          251..280
-                         /region_name="Antimicrobial21"
-                         /note="Plant antimicrobial peptide; pfam14861"
-                         /db_xref="CDD:405540"
-         Region          300..329
-                         /region_name="Antimicrobial21"
-                         /note="Plant antimicrobial peptide; pfam14861"
-                         /db_xref="CDD:405540"
-         CDS             1..392
-                         /gene="LOC4350789"
-                         /coded_by="XM_015760040.2:88..1266"
-                         /db_xref="GeneID:4350789"
-    ORIGIN      
-            1 mgvkwkggga llllaaglll vavaaaaaee egrrdpkeel rwckkqcrwe agqdqrqlre
-           61 ceeqclqrqq edddddenth ggggkecrre crgyrdepwr kqecmrqcew rrheqhhhgg
-          121 ghggsrpdcr eqcehqqdww ekqrclmdcr hrrqevdadd dnhhgrdpcy kqcrhhhdqw
-          181 kkqqcmeecr yhqrqqdaav dvdeeddnhg gdrcrkqcqh hhdqwkkqqc iqdcryhhrq
-          241 eddvveeedg hgdqqcrkqc qhhhdqwkkq qcmqdcrqwr rqeeeeaavd eeedhnygge
-          301 reqhcrkrcq hhhdqwkrqq cmqdcryrrq eeddvvdddn hhggggghgg dhcrrqcqhh
-          361 rewherqrcm rdcherrhgw atvaaeailq a`,
+    link1Data: {
+      aminoAcid: {
+        name: "Amino Acid Composition",
+        data: [
+          {
+            name: "Tiny Number",
+            val: 0,
+          },
+          {
+            name: "Small Number",
+            val: 0,
+          },
+          {
+            name: "Aliphatic Number",
+            val: 0,
+          },
+
+          {
+            name: "Aromatic Number",
+            val: 3,
+          },
+          {
+            name: "Non Polar Number",
+            val: 3,
+          },
+          {
+            name: "Polar Number",
+            val: 3,
+          },
+          {
+            name: "Charged Number",
+            val: 3,
+          },
+          {
+            name: "Basic Number",
+            val: 3,
+          },
+          {
+            name: "Acidic Number",
+            val: 0,
+          },
+          {
+            name: "Tiny Mole",
+            val: 0,
+          },
+          {
+            name: "Small Mole",
+            val: 0,
+          },
+          {
+            name: "Aliphatic Mole",
+            val: 0,
+          },
+          {
+            name: "Aromatic Mole",
+            val: 0,
+          },
+          {
+            name: "Non Polar Mole",
+            val: 0,
+          },
+          {
+            name: "Polar Mole",
+            val: 0,
+          },
+          {
+            name: "Charged Mole",
+            val: 0,
+          },
+          {
+            name: "Basic Mole",
+            val: 50,
+          },
+          {
+            name: "Acidic Mole",
+            val: 0,
+          },
+        ],
+      },
+      remainData: [
+        {
+          name: "Molecular Weight",
+          val: 1006,
+        },
+        {
+          name: "Length of Peptides",
+          val: 6,
+        },
+        {
+          name: "Net Charges Protein",
+          val: 3,
+        },
+        {
+          name: "ISI Electric Points",
+          val: 13,
+        },
+        {
+          name: "Aliphatic Index of Protein",
+          val: 0,
+        },
+        {
+          name: "INstability Index",
+          val: 199,
+        },
+        {
+          name: "Boman Index",
+          val: 6,
+        },
+        {
+          name: "Hydrophobic Moment",
+          val: 1,
+        },
+        {
+          name: "Aa Smiles",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Aa Smiles",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Bisum Induces",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Hydrophobicity",
+          val: -2,
+        },
+        {
+          name: "Cruciani Properties",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Fasgai Vector",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Jidera Factor",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Mess Shift",
+          val: 0,
+        },
+        {
+          name: "Membrane Position",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "MSW Him Score",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "Prot FP",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "ST Scales",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+        {
+          name: "T Scale",
+          val: "hgjhs g j hgsjhfgsj hyrrbfsb smkruhbbafjgdka jdjg ufb c",
+        },
+      ],
+    },
+    link2Data: {
+      name: "Fasta Tab",
+      fastaTab: {
+        title: "Chain A, cRW3 cationic antimicrobial peptide",
+        link: "PDB 2OTQ A",
+        ref: ">pdb |2OTQ| A Chain A, cRW3 cationic antimicrobial peptide RRWFWR",
+      },
+    },
+    link3Data: { name: "Structure", struct: { img: "/assets/bacteria.png" } },
   },
 ];
 module.exports = data;
