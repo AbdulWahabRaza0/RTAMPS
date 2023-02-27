@@ -48,23 +48,23 @@ const Home = () => {
   return (
     <>
       <Wrapper>
-        <Spacer height={isResponsive ? "20px" : "30px"} />
-        <Wrapper className="d-flex flex-row align-items-center justify-content-center ms-2 me-2">
+        <Spacer height={isResponsive ? "20px" : "25px"} />
+        <Wrapper className="d-flex flex-row align-items-center justify-content-center ps-2 pe-2">
           <P
             weight="700"
             size={isResponsive ? "16px" : "20px"}
             color="#012761"
-            className="text-center mb-0"
+            className="text-center mb-0 mt-0"
           >
             RTAMPS is a comprehensive freely accessible real time database of
             anti microbial peptides from different origins
           </P>
         </Wrapper>
 
-        <Spacer height={isResponsive ? "40px" : "12px"} />
+        <Spacer height={isResponsive ? "20px" : "17px"} />
         <Wrapper
-          ms={isResponsive ? "0%" : "20%"}
-          me={isResponsive ? "0%" : "20%"}
+          ms={isResponsive ? "auto" : "20%"}
+          me={isResponsive ? "auto" : "20%"}
           family="Signika"
         >
           <Row className="align-items-center justify-content-center">
@@ -72,19 +72,23 @@ const Home = () => {
               return (
                 <>
                   <Col
-                    // md={isResponsive ? 2 : 4}
-                    // sm={isResponsive ? 2 : 4}
-                    // lg={isResponsive ? 2 : 4}
+                    key={index}
+                    lg={4}
+                    md={4}
                     xs={4}
-                    className="d-flex flex-row justify-content-center"
+                    className={
+                      isResponsive
+                        ? "d-flex flex-row flex-wrap"
+                        : "d-flex flex-row justify-content-center"
+                    }
                     style={{
-                      marginTop: isResponsive ? "15px" : "20px",
-                      marginBottom: isResponsive ? "15px" : "20px",
+                      marginTop: isResponsive ? "15px" : "10px",
+                      marginBottom: isResponsive ? "15px" : "10px",
                     }}
                   >
                     <CardStyle
                       width={isResponsive ? "100%" : "70%"}
-                      height={isResponsive ? "100px" : "125px"}
+                      height={isResponsive ? "100px" : "118px"}
                       border="1px solid gray"
                       borderRadius="10px"
                       className="text-center pt-2"

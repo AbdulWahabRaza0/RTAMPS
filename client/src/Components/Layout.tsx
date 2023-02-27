@@ -45,8 +45,7 @@ const SpanWrapper = styled.span<WrapperProps>`
 const LinkP = styled(P)`
   cursor: pointer;
   &:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
+    font-weight: 700;
   }
 `;
 interface CardCompProps {

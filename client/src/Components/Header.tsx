@@ -24,8 +24,7 @@ const Header = () => {
           <Wrapper
             // color="#012761"
             color="#FFC23B"
-            className="d-flex flex-row justify-content-end align-items-center pe-2"
-            family="Signika"
+            className="d-flex flex-row justify-content-end align-items-center"
           >
             <Drawer />
           </Wrapper>
@@ -34,7 +33,6 @@ const Header = () => {
         <Wrapper
           color="#012761"
           className="d-flex flex-row justify-content-end align-items-center p-2"
-          family="Signika"
         >
           {headerLinks.map((val, index) => {
             return (
@@ -72,11 +70,8 @@ const Header = () => {
         </Wrapper>
       )}
 
-      <Wrapper
-        className="d-flex flex-row justify-content-center align-items-center"
-        bg="#012761"
-      >
-        <Wrapper className="d-flex flex-column align-items-center justify-content-center mt-3">
+      <Wrapper className="text-end" bg="#012761">
+        <Wrapper className="d-flex flex-column align-items-center mt-2">
           <Image
             src="/assets/logo.png"
             alt="Logo"
@@ -84,7 +79,7 @@ const Header = () => {
             height={isResponsive ? 80 : 100}
           />
           <P
-            className="mb-3"
+            className="mb-2"
             size={isResponsive ? "16px" : "21px"}
             color="#FFC23B"
             weight="450"

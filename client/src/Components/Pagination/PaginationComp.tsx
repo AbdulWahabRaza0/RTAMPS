@@ -53,7 +53,7 @@ const PaginationComp = (props: PaginationProps) => {
           onChange={handleChange}
         />
       </Stack>
-      <Wrapper className="ms-4">
+      <Wrapper className="ps-4">
         <P weight="500" color="#012761">
           Page {page} to {PER_PAGE} of {count}
         </P>
@@ -63,7 +63,7 @@ const PaginationComp = (props: PaginationProps) => {
               <div key={index} className="mt-4">
                 <Wrapper className="d-flex flex-row">
                   <P
-                    className="mb-0 me-4"
+                    className="mb-0 pe-4"
                     weight="700"
                     size="20px"
                     color="#012761"
@@ -72,18 +72,18 @@ const PaginationComp = (props: PaginationProps) => {
                   </P>
                   <Wrapper className="d-flex flex-column">
                     <LinkP
-                      weight="700"
+                      weight="500"
                       size="20px"
                       className="mb-1"
                       color="#012761"
-                      onClick={() => {
-                        router(
-                          `/${props.pageName}/${index + page * PER_PAGE - 19}`,
-                          {
-                            state: val.data,
-                          }
-                        );
-                      }}
+                      // onClick={() => {
+                      //   router(
+                      //     `/${props.pageName}/${index + page * PER_PAGE - 19}`,
+                      //     {
+                      //       state: val.data,
+                      //     }
+                      //   );
+                      // }}
                     >
                       {val.headline}
                     </LinkP>
@@ -94,13 +94,55 @@ const PaginationComp = (props: PaginationProps) => {
                       {val.ref}
                     </P>
                     <Wrapper className="d-flex flex-row">
-                      <LinkP className="mb-0" td="underline" size="12px">
+                      <LinkP
+                        className="mb-0"
+                        td="underline"
+                        size="12px"
+                        onClick={() => {
+                          router(
+                            `/${props.pageName}/${val.link1}/${
+                              index + page * PER_PAGE - 19
+                            }`,
+                            {
+                              state: { name: "link1", data: val.link1Data },
+                            }
+                          );
+                        }}
+                      >
                         {val.link1}
                       </LinkP>
-                      <LinkP className="ms-3 mb-0" td="underline" size="12px">
+                      <LinkP
+                        className="ms-3 mb-0"
+                        td="underline"
+                        size="12px"
+                        onClick={() => {
+                          router(
+                            `/${props.pageName}/${val.link2}/${
+                              index + page * PER_PAGE - 19
+                            }`,
+                            {
+                              state: { name: "link2", data: val.link2Data },
+                            }
+                          );
+                        }}
+                      >
                         {val.link2}
                       </LinkP>
-                      <LinkP className="ms-3 mb-0" td="underline" size="12px">
+                      <LinkP
+                        className="ms-3 mb-0"
+                        td="underline"
+                        size="12px"
+                        onClick={() => {
+                          router(
+                            `/${props.pageName}/${val.link3}/${
+                              index + page * PER_PAGE - 19
+                            }`,
+                            {
+                              state: { name: "link3", data: val.link3Data },
+                            }
+                          );
+                        }}
+                      >
                         {val.link3}
                       </LinkP>
                     </Wrapper>

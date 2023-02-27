@@ -45,10 +45,7 @@ const Bacteria = () => {
     <>
       <Spacer height="70px" />
       <SearchBar />
-      <Wrapper
-        className="d-flex flex-column justify-content-center align-items-center mt-5"
-        width="100%"
-      >
+      <Wrapper className="d-flex flex-column justify-content-center align-items-center mt-5">
         <PaginationComp data={data} pageName="bacteria" />
       </Wrapper>
     </>
