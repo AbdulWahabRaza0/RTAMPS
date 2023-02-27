@@ -24,7 +24,7 @@ const Header = () => {
           <Wrapper
             // color="#012761"
             color="#FFC23B"
-            className="d-flex flex-row justify-content-end align-items-center p-2"
+            className="d-flex flex-row justify-content-end align-items-center pe-2"
             family="Signika"
           >
             <Drawer />
@@ -81,7 +81,7 @@ const Header = () => {
             src="/assets/logo.png"
             alt="Logo"
             width={isResponsive ? 250 : 350}
-            height={100}
+            height={isResponsive ? 80 : 100}
           />
           <P
             className="mb-3"

@@ -43,7 +43,7 @@ const Bacteria = () => {
 
   return mount ? (
     <>
-      <Spacer height="30px" />
+      <Spacer height="70px" />
       <SearchBar />
       <Wrapper
         className="d-flex flex-column justify-content-center align-items-center mt-5"

@@ -48,11 +48,11 @@ const Home = () => {
   return (
     <>
       <Wrapper>
-        <Spacer height="30px" />
+        <Spacer height={isResponsive ? "20px" : "30px"} />
         <Wrapper className="d-flex flex-row align-items-center justify-content-center ms-2 me-2">
           <P
             weight="700"
-            size="20px"
+            size={isResponsive ? "16px" : "20px"}
             color="#012761"
             className="text-center mb-0"
           >
@@ -61,39 +61,51 @@ const Home = () => {
           </P>
         </Wrapper>
 
-        <Spacer height="40px" />
-        <Wrapper ms="20%" me="20%" family="Signika">
+        <Spacer height={isResponsive ? "40px" : "12px"} />
+        <Wrapper
+          ms={isResponsive ? "0%" : "20%"}
+          me={isResponsive ? "0%" : "20%"}
+          family="Signika"
+        >
           <Row className="align-items-center justify-content-center">
             {CardsData.map((val, index) => {
               return (
                 <>
                   <Col
-                    md={4}
-                    sm={4}
-                    lg={4}
+                    // md={isResponsive ? 2 : 4}
+                    // sm={isResponsive ? 2 : 4}
+                    // lg={isResponsive ? 2 : 4}
+                    xs={4}
                     className="d-flex flex-row justify-content-center"
-                    style={{ marginTop: "43px", marginBottom: "43px" }}
+                    style={{
+                      marginTop: isResponsive ? "15px" : "20px",
+                      marginBottom: isResponsive ? "15px" : "20px",
+                    }}
                   >
                     <CardStyle
-                      width="70%"
-                      height="145px"
+                      width={isResponsive ? "100%" : "70%"}
+                      height={isResponsive ? "100px" : "125px"}
                       border="1px solid gray"
                       borderRadius="10px"
-                      className="text-center pt-3"
+                      className="text-center pt-2"
                       onClick={() => {
                         router(`/${val.name}`, {
                           state: index + 1,
                         });
                       }}
                     >
-                      <P size="27px" weight="700" className="mb-3">
+                      <P
+                        size={isResponsive ? "21px" : "27px"}
+                        weight="700"
+                        className="mb-1"
+                      >
                         {val.name}
                       </P>
                       <Image
                         src={val.src}
                         alt="Submit"
-                        width={75}
-                        height={75}
+                        width={isResponsive ? 50 : 75}
+                        height={isResponsive ? 50 : 75}
                       />
                     </CardStyle>
                   </Col>

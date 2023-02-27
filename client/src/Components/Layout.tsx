@@ -73,8 +73,9 @@ const SearchBar = () => {
   const isResponsive = useMediaQuery({ query: "(max-width: 487px)" });
   return (
     <>
-      <Wrapper className="d-flex flex-row align-items-center justify-content-center ms-2 me-2">
+      <Wrapper className="d-flex flex-row align-items-center justify-content-center">
         <Select
+          style={{ width: isResponsive ? "20%" : "auto" }}
           ps={isResponsive ? "0px" : "25px"}
           pe={isResponsive ? "0px" : "25px"}
           fontSize={isResponsive ? "16px" : "21px"}
@@ -85,8 +86,12 @@ const SearchBar = () => {
           <option value="GI No">GI No</option>
           <option value="Accession No">Accession No</option>
         </Select>
-        <SearchInput className={isResponsive ? "ms-1 me-1" : "ms-3 me-3"} />
+        <SearchInput
+          width={isResponsive ? "200px" : "500px"}
+          className={isResponsive ? "ms-1 me-1" : "ms-3 me-3"}
+        />
         <Button
+          className={isResponsive ? "ms-0 me-0" : ""}
           ps={isResponsive ? "10px" : "25px"}
           pe={isResponsive ? "10px" : "25px"}
           fontSize={isResponsive ? "16px" : "21px"}

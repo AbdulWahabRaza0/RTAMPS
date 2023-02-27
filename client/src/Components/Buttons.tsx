@@ -3,6 +3,8 @@ import { useMediaQuery } from "react-responsive";
 interface SelectProps {
   ps?: string;
   pe?: string;
+  ms?: string;
+  me?: string;
   fontSize?: string;
 }
 const Button = styled.div<SelectProps>`
@@ -10,6 +12,8 @@ const Button = styled.div<SelectProps>`
   color: white;
   padding-left: ${(props) => (props.ps ? props.ps : "25px")};
   padding-right: ${(props) => (props.pe ? props.pe : "25px")};
+  margin-left: ${(props) => (props.ms ? props.ms : "25px")};
+  margin-right: ${(props) => (props.me ? props.me : "25px")};
   padding-top: 2px;
   padding-bottom: 2px;
   font-size: ${(props) => (props.fontSize ? props.fontSize : "21px")};

@@ -6,9 +6,17 @@ const Input = styled.input`
   border: none;
   border-radius: 10px;
 `;
+interface SearchInput {
+  width?: string;
+}
 const SearchInput = styled.input`
-  width: 500px;
+  width: ${(props) => (props.width ? props.width : "500px")};
   height: 37px;
   border-radius: 10px;
+  color: #012761;
+  font-weight: 500;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 18px;
 `;
 export { Input, SearchInput };
