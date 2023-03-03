@@ -47,7 +47,6 @@ const Bacteria = () => {
   }, []);
 
   const filterBySearch = () => {
-    console.log("This is value or option ", selectedOption);
     // Access input value
     const query = searchVal;
     // Create copy of item list

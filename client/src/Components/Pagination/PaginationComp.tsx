@@ -55,7 +55,7 @@ const PaginationComp = (props: PaginationProps) => {
           onChange={handleChange}
         />
       </Stack>
-      <Wrapper>
+      <Wrapper style={{ maxWidth: "550px" }}>
         {props.switchState ? (
           <>
             <P>This is something else data...</P>
