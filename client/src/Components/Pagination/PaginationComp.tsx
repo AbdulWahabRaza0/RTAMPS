@@ -100,9 +100,14 @@ const PaginationComp = (props: PaginationProps) => {
                           <P weight="500" className="mb-0">
                             {val.subInfo}
                           </P>
-                          <P size="12px" className="mb-1">
-                            {val.ref}
-                          </P>
+                          <Wrapper className="d-flex flex-row align-items-center">
+                            <P size="12px" className="mb-1 me-2">
+                              Accession: {val.ref.Accession}
+                            </P>
+                            <P size="12px" className="mb-1">
+                              GI: {val.ref.GI}
+                            </P>
+                          </Wrapper>
                           <Wrapper className="d-flex flex-row">
                             <LinkP
                               className="mb-0"

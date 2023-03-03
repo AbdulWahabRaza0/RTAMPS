@@ -75,6 +75,11 @@ const CardComp = (props: CardCompProps) => {
 interface SearchBarProps {
   switchState: any;
   setSwitchState: any;
+  selectedOption: number;
+  setSelectedOption: any;
+  searchVal: string;
+  setSearchVal: any;
+  filterBySearch: any;
 }
 const SearchBar = (props: SearchBarProps) => {
   const isResponsive = useMediaQuery({ query: "(max-width: 487px)" });
@@ -109,17 +114,26 @@ const SearchBar = (props: SearchBarProps) => {
           ps={isResponsive ? "0px" : "25px"}
           pe={isResponsive ? "0px" : "25px"}
           fontSize={isResponsive ? "16px" : "21px"}
+          onClick={(e: any) => {
+            console.log("This is selected Value ", e.target.value);
+            props.setSelectedOption(e.target.value);
+          }}
           name="bioMedical"
           id="bioMedical"
         >
-          <option value="AMPs Name">AMPs Name</option>
-          <option value="GI No">GI No</option>
-          <option value="Accession No">Accession No</option>
+          <option value={0}>AMPs Name</option>
+          <option value={1}>GI No</option>
+          <option value={2}>Accession No</option>
         </Select>
         <SearchInput
           width={isResponsive ? "150px" : "500px"}
           height="35px"
           className={isResponsive ? "ms-1 me-1" : "ms-2 me-0"}
+          name="searchVal"
+          value={props.searchVal}
+          onChange={(e) => {
+            props.setSearchVal(e.target.value);
+          }}
         />
         <Button
           style={{ height: "35px" }}
@@ -130,6 +144,10 @@ const SearchBar = (props: SearchBarProps) => {
           pe={isResponsive ? "10px" : "25px"}
           ms="7px"
           fontSize={isResponsive ? "16px" : "21px"}
+          onClick={(e) => {
+            console.log("This is search function");
+            props.filterBySearch();
+          }}
         >
           Search
         </Button>
