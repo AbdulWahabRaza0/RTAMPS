@@ -11,7 +11,7 @@ interface SearchInput {
 }
 const SearchInput = styled.input`
   width: ${(props) => (props.width ? props.width : "500px")};
-  height: 37px;
+  height: ${(props) => (props.height ? props.height : "37px")};
   border-radius: 10px;
   color: #012761;
   font-weight: 500;

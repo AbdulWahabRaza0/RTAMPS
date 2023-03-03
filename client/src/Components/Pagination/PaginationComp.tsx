@@ -10,6 +10,8 @@ import { useNavigate } from "react-router-dom";
 interface PaginationProps {
   data: any;
   pageName: string;
+  switchState: boolean;
+  setSwitchState: any;
 }
 const PaginationComp = (props: PaginationProps) => {
   const router = useNavigate();
@@ -53,107 +55,126 @@ const PaginationComp = (props: PaginationProps) => {
           onChange={handleChange}
         />
       </Stack>
-      <Wrapper className="ps-4">
-        <P weight="500" color="#012761">
-          Page {page} to {PER_PAGE} of {count}
-        </P>
-        {currentData(currentPage).map((val: any, index: any) => {
-          return (
-            <>
-              <div key={index} className="mt-4">
-                <Wrapper className="d-flex flex-row">
-                  <P
-                    className="mb-0 pe-4"
-                    weight="700"
-                    size="20px"
-                    color="#012761"
-                  >
-                    {index + page * PER_PAGE - 19}.
-                  </P>
-                  <Wrapper className="d-flex flex-column">
-                    <LinkP
-                      weight="500"
-                      size="20px"
-                      className="mb-1"
-                      color="#012761"
-                      // onClick={() => {
-                      //   router(
-                      //     `/${props.pageName}/${index + page * PER_PAGE - 19}`,
-                      //     {
-                      //       state: val.data,
-                      //     }
-                      //   );
-                      // }}
-                    >
-                      {val.headline}
-                    </LinkP>
-                    <P weight="500" className="mb-0">
-                      {val.subInfo}
-                    </P>
-                    <P size="12px" className="mb-1">
-                      {val.ref}
-                    </P>
-                    <Wrapper className="d-flex flex-row">
-                      <LinkP
-                        className="mb-0"
-                        td="underline"
-                        size="12px"
-                        onClick={() => {
-                          router(
-                            `/${props.pageName}/${val.link1}/${
-                              index + page * PER_PAGE - 19
-                            }`,
-                            {
-                              state: { name: "link1", data: val.link1Data },
-                            }
-                          );
-                        }}
-                      >
-                        {val.link1}
-                      </LinkP>
-                      <LinkP
-                        className="ms-3 mb-0"
-                        td="underline"
-                        size="12px"
-                        onClick={() => {
-                          router(
-                            `/${props.pageName}/${val.link2}/${
-                              index + page * PER_PAGE - 19
-                            }`,
-                            {
-                              state: { name: "link2", data: val.link2Data },
-                            }
-                          );
-                        }}
-                      >
-                        {val.link2}
-                      </LinkP>
-                      <LinkP
-                        className="ms-3 mb-0"
-                        td="underline"
-                        size="12px"
-                        onClick={() => {
-                          router(
-                            `/${props.pageName}/${val.link3}/${
-                              index + page * PER_PAGE - 19
-                            }`,
-                            {
-                              state: { name: "link3", data: val.link3Data },
-                            }
-                          );
-                        }}
-                      >
-                        {val.link3}
-                      </LinkP>
-                    </Wrapper>
-                  </Wrapper>
-                </Wrapper>
-              </div>
-            </>
-          );
-        })}
+      <Wrapper>
+        {props.switchState ? (
+          <>
+            <P>This is something else data...</P>
+          </>
+        ) : (
+          <>
+            {" "}
+            <Wrapper className="ps-4">
+              <P weight="500" color="#012761">
+                Page {page} to {PER_PAGE} of {count}
+              </P>
+              {currentData(currentPage).map((val: any, index: any) => {
+                return (
+                  <>
+                    <div key={index} className="mt-4">
+                      <Wrapper className="d-flex flex-row">
+                        <P
+                          className="mb-0 pe-4"
+                          weight="700"
+                          size="20px"
+                          color="#012761"
+                        >
+                          {index + page * PER_PAGE - 19}.
+                        </P>
+                        <Wrapper className="d-flex flex-column">
+                          <LinkP
+                            weight="500"
+                            size="20px"
+                            className="mb-1"
+                            color="#012761"
+                            // onClick={() => {
+                            //   router(
+                            //     `/${props.pageName}/${index + page * PER_PAGE - 19}`,
+                            //     {
+                            //       state: val.data,
+                            //     }
+                            //   );
+                            // }}
+                          >
+                            {val.headline}
+                          </LinkP>
+                          <P weight="500" className="mb-0">
+                            {val.subInfo}
+                          </P>
+                          <P size="12px" className="mb-1">
+                            {val.ref}
+                          </P>
+                          <Wrapper className="d-flex flex-row">
+                            <LinkP
+                              className="mb-0"
+                              td="underline"
+                              size="12px"
+                              onClick={() => {
+                                router(
+                                  `/${props.pageName}/${val.link1}/${
+                                    index + page * PER_PAGE - 19
+                                  }`,
+                                  {
+                                    state: {
+                                      name: "link1",
+                                      data: val.link1Data,
+                                    },
+                                  }
+                                );
+                              }}
+                            >
+                              {val.link1}
+                            </LinkP>
+                            <LinkP
+                              className="ms-3 mb-0"
+                              td="underline"
+                              size="12px"
+                              onClick={() => {
+                                router(
+                                  `/${props.pageName}/${val.link2}/${
+                                    index + page * PER_PAGE - 19
+                                  }`,
+                                  {
+                                    state: {
+                                      name: "link2",
+                                      data: val.link2Data,
+                                    },
+                                  }
+                                );
+                              }}
+                            >
+                              {val.link2}
+                            </LinkP>
+                            <LinkP
+                              className="ms-3 mb-0"
+                              td="underline"
+                              size="12px"
+                              onClick={() => {
+                                router(
+                                  `/${props.pageName}/${val.link3}/${
+                                    index + page * PER_PAGE - 19
+                                  }`,
+                                  {
+                                    state: {
+                                      name: "link3",
+                                      data: val.link3Data,
+                                    },
+                                  }
+                                );
+                              }}
+                            >
+                              {val.link3}
+                            </LinkP>
+                          </Wrapper>
+                        </Wrapper>
+                      </Wrapper>
+                    </div>
+                  </>
+                );
+              })}
+            </Wrapper>
+          </>
+        )}
       </Wrapper>
-
       <Stack spacing={2} className="mt-5">
         <Pagination
           count={count}

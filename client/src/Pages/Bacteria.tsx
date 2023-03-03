@@ -11,6 +11,7 @@ import { Spacer } from "../Components/Spacer";
 const Bacteria = () => {
   const isResponsive = useMediaQuery({ query: "(max-width: 487px)" });
   const [mount, setMount] = useState(false);
+  const [switchState, setSwitchState] = useState(false);
   const [data, setData] = useState<any>();
 
   const GettingData = async () => {
@@ -44,9 +45,14 @@ const Bacteria = () => {
   return mount ? (
     <>
       <Spacer height="70px" />
-      <SearchBar />
+      <SearchBar switchState={switchState} setSwitchState={setSwitchState} />
       <Wrapper className="d-flex flex-column justify-content-center align-items-center mt-5">
-        <PaginationComp data={data} pageName="bacteria" />
+        <PaginationComp
+          data={data}
+          pageName="bacteria"
+          switchState={switchState}
+          setSwitchState={setSwitchState}
+        />
       </Wrapper>
     </>
   ) : (

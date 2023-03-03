@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import styled from "styled-components";
 import { Image } from "./Image";
@@ -5,6 +6,9 @@ import { P } from "./Typography";
 import { useMediaQuery } from "react-responsive";
 import { Select, Button } from "../Components/Buttons";
 import { SearchInput } from "../Components/Inputs";
+import { SwitchComp } from "../Components/Buttons";
+import { InfoIcon } from "./Icons";
+import Tooltip from "@mui/material/Tooltip";
 interface WrapperProps {
   size?: string;
   color?: string;
@@ -68,13 +72,40 @@ const CardComp = (props: CardCompProps) => {
     </Wrapper>
   );
 };
-const SearchBar = () => {
+interface SearchBarProps {
+  switchState: any;
+  setSwitchState: any;
+}
+const SearchBar = (props: SearchBarProps) => {
   const isResponsive = useMediaQuery({ query: "(max-width: 487px)" });
   return (
     <>
       <Wrapper className="d-flex flex-row align-items-center justify-content-center">
+        <Wrapper className="d-flex flex-row justify-content-center align-items-center me-2">
+          <Wrapper
+            bg="#D3D3D3"
+            borderRadius="15px"
+            height="35px"
+            className="d-flex flex-row justify-content-between align-items-center p-1"
+          >
+            <Tooltip title="This is info">
+              <InfoIcon sx={{ color: "white" }} />
+            </Tooltip>
+            <Wrapper
+              className="d-flex flex-row align-items-center justify-content-center"
+              height="25px"
+              bg="#D3D3D3"
+              borderRadius="15px"
+            >
+              <SwitchComp
+                switchState={props.switchState}
+                setSwitchState={props.setSwitchState}
+              />
+            </Wrapper>
+          </Wrapper>
+        </Wrapper>
         <Select
-          style={{ width: isResponsive ? "20%" : "auto" }}
+          style={{ width: isResponsive ? "20%" : "auto", height: "35px" }}
           ps={isResponsive ? "0px" : "25px"}
           pe={isResponsive ? "0px" : "25px"}
           fontSize={isResponsive ? "16px" : "21px"}
@@ -86,13 +117,18 @@ const SearchBar = () => {
           <option value="Accession No">Accession No</option>
         </Select>
         <SearchInput
-          width={isResponsive ? "200px" : "500px"}
-          className={isResponsive ? "ms-1 me-1" : "ms-3 me-3"}
+          width={isResponsive ? "150px" : "500px"}
+          height="35px"
+          className={isResponsive ? "ms-1 me-1" : "ms-2 me-0"}
         />
         <Button
-          className={isResponsive ? "ms-0 me-0" : ""}
+          style={{ height: "35px" }}
+          className={`d-flex flex-row align-items-center justify-content-center ${
+            isResponsive ? "ms-0 me-0" : ""
+          }`}
           ps={isResponsive ? "10px" : "25px"}
           pe={isResponsive ? "10px" : "25px"}
+          ms="7px"
           fontSize={isResponsive ? "16px" : "21px"}
         >
           Search
