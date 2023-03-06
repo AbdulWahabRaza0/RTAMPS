@@ -12,6 +12,7 @@ import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
 import BuildIcon from "@mui/icons-material/Build";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import BiotechIcon from "@mui/icons-material/Biotech";
+import CloseIcon from "@mui/icons-material/Close";
 export {
   InboxIcon,
   MailIcon,
@@ -27,4 +28,5 @@ export {
   BuildIcon,
   BarChartIcon,
   BiotechIcon,
+  CloseIcon,
 };
